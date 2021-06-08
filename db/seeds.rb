@@ -45,8 +45,8 @@ space_attributes = [
 space_attributes.each do |space_attribute|
   space = Space.new(space_attribute)
 
-  # file = URI.open("https://source.unsplash.com/featured/?parks")
-  # space.photo.attach(io: file, filename: "parks", content_type: file.content_type_parse.first)
+  file = URI.open("https://source.unsplash.com/featured/?parks")
+  space.photo.attach(io: file, filename: "parks", content_type: file.content_type_parse.first)
   space.save!
 end
 
