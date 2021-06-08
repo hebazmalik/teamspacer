@@ -16,5 +16,14 @@ Rails.application.routes.draw do
       post :space
       post :restaurant
     end
+
   end
+  resources :restaurants, only: [:show] do 
+    resources :plans, only: [] do
+      collection do
+        post :restaurant
+      end
+    end 
+  end 
+  resources :plans, only: [:new, :create, :destroy, :edit, :update, :show]
 end

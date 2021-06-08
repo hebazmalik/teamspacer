@@ -4,6 +4,9 @@
     <h2>
       <%= @space.name %>
     </h2>
+
+    <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
+
     <p>
       <%= @space.description %>
     </p>
@@ -15,3 +18,4 @@
 
 
 <%= link_to "Back" , area_spaces_path(@space.area) %>
+
