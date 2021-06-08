@@ -44,11 +44,10 @@ space_attributes = [
 
 space_attributes.each do |space_attribute|
   space = Space.new(space_attribute)
-  space.save!
 
   # file = URI.open("https://source.unsplash.com/featured/?parks")
   # space.photo.attach(io: file, filename: "parks", content_type: file.content_type_parse.first)
-  # space.save!
+  space.save!
 end
 
 puts "Created 5 spaces"
@@ -65,11 +64,10 @@ restaurants_attributes = [
 
 restaurants_attributes.each do |restaurant_attribute|
   restaurant = Restaurant.new(restaurant_attribute)
-  restaurant.save!
 
-  # file = URI.open("https://source.unsplash.com/featured/?food")
-  # restaurant.photo.attach(io: file, filename: "food", content_type: file.content_type_parse.first)
-  # restaurant.save!
+  file = URI.open("https://source.unsplash.com/featured/?food")
+  restaurant.photo.attach(io: file, filename: "food", content_type: file.content_type_parse.first)
+  restaurant.save!
 end
 
 puts "Created 5 restaurants"

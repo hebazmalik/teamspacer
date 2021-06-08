@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem 'cloudinary', '~> 1.16.0'
+
 gem 'geocoder'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
