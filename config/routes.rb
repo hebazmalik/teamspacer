@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :spaces, only: [:show]
-  resources :restaurants, only: [:destroy, :update, :edit, :show, :new, :create]
+  resources :restaurants, only: [:show]
   resources :plans, only: [:new, :create, :destroy, :edit, :update, :show] do
     collection do
       post :space
