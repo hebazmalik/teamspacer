@@ -11,6 +11,10 @@ Area.destroy_all
 User.destroy_all
 
 
+user = User.create!(email: "heba@gmail.com", password: "123456")
+
+puts "Created a user with email: heba@gmail.com and password: 123456"
+
 
 area_attributes = [
   { name: "Central London", location: "Central London" },
@@ -28,6 +32,7 @@ end
 puts "Created 5 areas(regions)"
 
 
+
 space_attributes = [
   { name: "Hampstead Heath", location: "West Gate Lodge, Hampstead Lane, Hampstead Heath, London, NW3 7JP", description: "A playground for picnickers, dog-walkers, and nature-lovers alike, keep an eye out for some very special residents such as muntjac deer and parakeets", area: Area.find_by_name("North London")},
   { name: "Dulwich Park", location: "Dulwich Park, College Rd, London SE21", description: "Dulwich Park might be one of the less well-known parks in South London but it’s a treasure to those lucky enough to have discovered its leafy environs. ", area: Area.find_by_name("South London")},
@@ -35,6 +40,7 @@ space_attributes = [
   { name: "Battersea Park", location: "Battersea Park, London, SW11 4NJ", description: "Battersea Park is a 200-acre green space at Battersea in the London Borough of Wandsworth in London. It is situated on the south bank of the River Thames opposite Chelsea and was opened in 1858. ", area: Area.find_by_name("South London")},
   { name: "Brockwell Park", location: "Brockwell Park, Brockwell Park Gardens, London SE24 9BJ", description: "Brockwell Park is a 50.8 hectare park located south of Brixton, in Herne Hill and Tulse Hill in south London. It is bordered by the roads Brixton Water Lane, Norwood Road, Tulse Hill and Dulwich Road. The park commands views of the skyline of the city and Central London.", area: Area.find_by_name("South London")}
 ]
+
 
 space_attributes.each do |space_attribute|
   space = Space.new(space_attribute)
