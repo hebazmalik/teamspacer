@@ -42,10 +42,10 @@ class RestaurantsController < ApplicationController
   #   redirect_to user, notice: 'Restaurant was successfully destroyed.'
   # end
 
-#   private
+  private
 
-#   def restaurant_params
-#     params.require(:restaurant).permit(:name,:location, :description, :price, :cuisine, :opening_time, :closing_time)
-#   end
+  def restaurant_params
+    params.require(:restaurant).permit(:name,:location, :description, :price, :cuisine, :opening_time, :closing_time, :photo)
+  end
 
 end

@@ -7,7 +7,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.string :price
       t.string :cuisine
       t.time :opening_time
-      t.time :closing_time
+      t.time :closing_times
       t.float :longitude
       t.float :latitude
       t.references :area, null: false, foreign_key: true
