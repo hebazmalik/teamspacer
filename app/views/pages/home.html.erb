@@ -1,2 +1,15 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <%= form_tag spaces_path, method: :get do %>
+    <%= text_field_tag :area,
+    params[:area],
+    placeholder: "Select an area" %>
+    <%= text_field_tag :query,
+      params[:query],
+      placeholder: "Find a space"
+      %>
+      <%= submit_tag "Search" %>
+  <% end %>
+
+</div>
