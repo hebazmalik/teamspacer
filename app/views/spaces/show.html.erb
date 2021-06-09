@@ -1,5 +1,4 @@
 <div class="list-card">
-  <img src="" alt="">
   <div class="list-card-infos">
     <h2><%= @space.name %></h2>
       <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
@@ -8,7 +7,6 @@
   </div>
 </div>
 
-<%= link_to "Add to plan", space_space_plans_path(@space.id) %>
+<%= link_to "Add to plan", space_space_plans_path(@space), method: :post %>
 
-<%= link_to "Back" , spaces_path(@space.area, area: params[:area], query: params[:query]) %>
-
+<%= link_to "Back" , spaces_path(area: params[:area], query: params[:query]) %>
