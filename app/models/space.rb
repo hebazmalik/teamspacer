@@ -6,4 +6,11 @@ class Space < ApplicationRecord
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  include PgSearch::Model
+  pg_search_scope :search_by_space,
+    against: [:name, :location],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

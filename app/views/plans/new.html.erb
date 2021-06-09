@@ -1,0 +1,14 @@
+<h1>Complete your plan</h1>
+
+<h3>Your space is:</h3>
+<p><%= @space %></p>
+
+<h3>Your restaurant is:</h3>
+<p><%= @restaurant %></p>
+
+<%= simple_form_for @plan do |f| %>
+  <%= f.input :meeting_point, as: :location %>
+  <%= f.input :time, as: :time, html5: true %>
+  <%= f.input :date, as: :date, html5: true %>
+  <%= f.submit %>
+<% end %>
