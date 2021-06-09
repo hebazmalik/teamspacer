@@ -5,11 +5,12 @@ class SpacesController < ApplicationController
   end
 
   def index
+    raise
     if params[:query].present?
       @spaces = Space.search_by_space(params[:query])
     else
       @area = Area.find(params[:area_id])
-      @spaces = Space.where(area: @area)
+      @spaces = @spaces.where(area: @area)
     end
   end
 

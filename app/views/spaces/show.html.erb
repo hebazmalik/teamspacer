@@ -8,4 +8,5 @@
   </div>
 </div>
 
-<%= link_to "Back" , area_spaces_path(@space.area) %>
+<%= link_to "Back" , spaces_path(@space.area, area: params[:area], query: params[:query]) %>
+
