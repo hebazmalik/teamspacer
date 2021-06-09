@@ -1,12 +1,19 @@
 <div class="show-container">
   <h1><%= @space.name %></h1>
-    <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
-    <div class="show-container-infos">
+  <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="show-container-infos">
     <p><%= @space.description %></p>
     <p><%= @space.location %></p>
   </div>
-  <div class="show-container-select">
-    <%= link_to "Back" , spaces_path(area: params[:area], query: params[:query]) %>
-    <%= link_to "Add to plan", space_space_plans_path(@space), method: :post %>
-  </div>
+</div>
+
+<div
+  id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+<div class="show-container-select">
+  <%= link_to "Back" , spaces_path(area: params[:area], query: params[:query]) %>
+  <%= link_to "Add to plan", space_space_plans_path(@space), method: :post %>
 </div>
