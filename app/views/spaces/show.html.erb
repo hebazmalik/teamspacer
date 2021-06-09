@@ -1,7 +1,6 @@
-<div class="list-card">
-  <img src="" alt="">
-  <div class="list-card-infos">
-    <h2><%= @space.name %></h2>
+<div class="show-card">
+  <div class="show-card-infos">
+    <h1><%= @space.name %></h1>
       <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
     <p><%= @space.description %></p>
     <p><%= @space.location %></p>
@@ -9,4 +8,9 @@
 </div>
 
 <%= link_to "Back" , spaces_path(@space.area, area: params[:area], query: params[:query]) %>
+
+
+
+
+
 

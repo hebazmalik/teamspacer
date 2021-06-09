@@ -1,0 +1,42 @@
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px;
+  color: #004633;
+}
+
+.index-card {
+  overflow: hidden;
+  background: #B7C6B2;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  height: 230px;
+  width: 350px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.index-card > img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.index-card h2 {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+  color: #004633;
+}
+
+.index-card p {
+  font-size: 8px;
+  opacity: .7;
+  margin: 0;
+}
+
+.index-card .index-card-infos{
+  padding: 10px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
