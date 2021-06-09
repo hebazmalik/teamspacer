@@ -1,7 +1,7 @@
 <h1>There are <%= pluralize(@spaces.size, "space") %> in <%= params[:search][:space] %></h1>
 <% @spaces.each do |space| %>
   <div>
-    <%= link_to space_path(space, area: params[:area], query: params[:query]) do %>
+    <%= link_to space_path(space, search: {area: params[:search][:area], space: params[:search][:space]}) do %>
       <div class="index-card">
         <% if space.photo.attached? %>
           <%= cl_image_tag space.photo.key %>
@@ -16,3 +16,5 @@
     <% end %>
   </div>
 <% end  %>
+
+<%= link_to "Back", root_path %>
