@@ -1,12 +1,12 @@
 class RestaurantsController < ApplicationController
 
   def index
-    @area = Area.find(params[:area_id])
-    @restaurants = Restaurant.all
+    # @area = Area.find(params[:area_id])
+    @restaurants = Restauatant.near([@space.longitude, @space.latitude], 1, units: km)
   end
 
   def show
-     @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find(params[:id])
   end
 
   # def new
@@ -45,7 +45,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name,:location, :description, :price, :cuisine, :opening_time, :closing_time, :photo)
+    params.require(:restaurant).permit(:name, :location, :description, :price, :cuisine, :opening_time, :closing_time, :photo)
   end
 
 end
