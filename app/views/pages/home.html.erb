@@ -1,15 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<div>
-  <%= form_tag spaces_path, method: :get do %>
-    <%= text_field_tag :area,
-    params[:area],
-    placeholder: "Select an area" %>
-    <%= text_field_tag :query,
-      params[:query],
-      placeholder: "Find a space"
-      %>
-      <%= submit_tag "Search" %>
-  <% end %>
+<div class="offset-sm-3 col-sm-6">
+  <%= simple_form_for :search, url: spaces_path, method: :get do |f| %>
+    <%= f.input :area, collection: Area.pluck(:name), placeholder: "Select an area" %>
+    <%= f.input :space, placeholder: "Find a space" %>
 
+    <%= f.submit "Search" %>
+  <% end %>
 </div>
