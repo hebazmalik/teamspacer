@@ -1,15 +1,19 @@
-<div class="show-card">
-  <div class="show-card-infos">
-    <h1><%= @space.name %></h1>
-      <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="show-container">
+  <h1><%= @space.name %></h1>
+    <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="show-container-infos">
     <p><%= @space.description %></p>
     <p><%= @space.location %></p>
   </div>
+  <div class="show-container-select">
+    <%= link_to "Back" , spaces_path(@space.area, area: params[:area], query: params[:query]) %>
+    <%= link_to "Add to plan", space_space_plans_path(@space.id) %>
+  </div>
 </div>
 
-<%= link_to "Add to plan", space_space_plans_path(@space.id) %>
 
-<%= link_to "Back" , spaces_path(@space.area, area: params[:area], query: params[:query]) %>
+
+
 
 
 
