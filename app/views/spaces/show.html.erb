@@ -1,12 +1,12 @@
-<div class="list-card">
-  <div class="list-card-infos">
-    <h2><%= @space.name %></h2>
-      <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="show-container">
+  <h1><%= @space.name %></h1>
+    <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="show-container-infos">
     <p><%= @space.description %></p>
     <p><%= @space.location %></p>
   </div>
+  <div class="show-container-select">
+    <%= link_to "Back" , spaces_path(area: params[:area], query: params[:query]) %>
+    <%= link_to "Add to plan", space_space_plans_path(@space), method: :post %>
+  </div>
 </div>
-
-<%= link_to "Add to plan", space_space_plans_path(@space), method: :post %>
-
-<%= link_to "Back" , spaces_path(area: params[:area], query: params[:query]) %>

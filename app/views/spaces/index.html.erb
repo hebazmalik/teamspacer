@@ -1,12 +1,18 @@
-<h1>Spaces</h1>
-
+<h1>There are <%= pluralize(@spaces.size, "space") %> in <%= params[:search][:space] %></h1>
 <% @spaces.each do |space| %>
-  <% if space.photo.attached? %>
-    <%= cl_image_tag space.photo.key, height: 200, width: 400, crop: :fill %>
-  <% else %>
-    <%= image_tag "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" %>
-  <% end %>
-  <h3><%= space.name %></h3>
-  <p><%= space.location %></p>
-  <%= link_to 'Show', space_path(space, area: params[:area], query: params[:query]) %>
+  <div>
+    <%= link_to space_path(space, area: params[:area], query: params[:query]) do %>
+      <div class="index-card">
+        <% if space.photo.attached? %>
+          <%= cl_image_tag space.photo.key %>
+        <% else %>
+          <%= image_tag "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" %>
+        <% end %>
+        <div class="index-card-infos">
+          <h2><%= space.name %></h2>
+          <p><%= space.location %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end  %>

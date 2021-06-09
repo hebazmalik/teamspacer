@@ -1,0 +1,31 @@
+.show-container {
+  height: 100%;
+  width: 350px;
+  margin: 10px auto;
+}
+
+.show-container h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #004633;
+}
+
+.show-container > img {
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.show-container p {
+  font-size: 15px;
+  color: #004633;
+}
+
+.show-container .show-container-select{
+  justify-content: space-evenly;
+  align-items: flex-end;
+  position: relative;
+}
