@@ -2,8 +2,9 @@
   <h1><%= @space.name %></h1>
   <%= cl_image_tag @space.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="show-container-infos">
-  <p><%= @space.description %></p>
-  <p><%= @space.location %></p>
+    <p><%= @space.description %></p>
+    <p><%= @space.location %></p>
+  </div>
 </div>
 
 <div
