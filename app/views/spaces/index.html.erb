@@ -8,5 +8,5 @@
     <% end %>
   <h3><%= space.name %></h3>
   <p><%= space.location %></p>
-  <%= link_to 'Show', space %>
+  <%= link_to 'Show', space_path(area: params[:area], query: params[:query]) %>
 <% end  %>

@@ -4,9 +4,9 @@ class PlansController < ApplicationController
     @space = Space.find(params[:space_id])
     if session[:plan].blank?
       session[:plan] = {}
-    end 
+    end
     session[:plan][:space_id] = params[:space_id]
-    redirect_to area_restaurants_path(@space.area)
+    redirect_to restaurants_path(@space.area, area: params[:area], query: params[:query])
   end
 
   def restaurant
@@ -21,11 +21,11 @@ class PlansController < ApplicationController
   def new
     if session.dig(:plan, :space_id).blank? || session.dig(:plan, :restaurant_id).blank?
       return redirect_to root_path, notice: "please select a space and a restaurant before creating your plan"
-    end 
+    end
     @plan = Plan.new
     @space = Space.find(session[:plan][:space_id])
     @restaurant = Restaurant.find(session[:plan][:restaurant_id])
-  end 
+  end
 
   def create
     @plan = Plan.new(plan_params)
@@ -35,16 +35,16 @@ class PlansController < ApplicationController
     if plan.save
       redirect_to user_path(current_user)
       session[:plan] = nil
-    else 
+    else
       render :new
-    end 
-    
+    end
+
   end
 
   private
 
   def plan_params
     params.require(:plans).permit(:time, :date, :meeting_point)
-  end 
+  end
 
 end
