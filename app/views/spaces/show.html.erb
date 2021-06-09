@@ -15,5 +15,7 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 
+<%= link_to "Add to plan", space_space_plans_path(@space.id) %>
+
 <%= link_to "Back" , spaces_path(@space.area, area: params[:area], query: params[:query]) %>
 
