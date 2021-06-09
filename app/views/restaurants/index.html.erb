@@ -1,3 +1,5 @@
+<h1>Restaurants</h1>
+
 <% @restaurants.each do |restaurant| %>
     <% if restaurant.photo.attached? %>
         <%= cl_image_tag restaurant.photo.key, height: 200, width: 400, crop: :fill %>

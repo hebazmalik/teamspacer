@@ -2,7 +2,8 @@ class RestaurantsController < ApplicationController
 
   def index
     # @area = Area.find(params[:area_id])
-    @restaurants = Restauatant.near([@space.longitude, @space.latitude], 1, units: km)
+    @space = Space.find(session[:plan]['space_id'])
+    @restaurants = Restaurant.near([@space.latitude, @space.longitude], 3, units: :km)
   end
 
   def show

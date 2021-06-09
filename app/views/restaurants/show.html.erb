@@ -43,4 +43,6 @@
 
 
 
-<%= link_to 'Back', area_restaurants_path(@restaurant.area) %>
+<%= link_to "Add to plan", restaurant_restaurant_plans_path(@restaurant), method: :post %>
+
+<%= link_to "Back" , restaurants_path(area: params[:area], query: params[:query]) %>
