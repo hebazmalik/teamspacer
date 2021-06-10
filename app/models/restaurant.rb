@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
   belongs_to :area
-  has_many :plans
+  has_many :plans, dependent: :destroy
   has_one_attached :photo
 
   geocoded_by :location

@@ -1,6 +1,6 @@
 class Plan < ApplicationRecord
-  belongs_to :restaurant
-  belongs_to :user
-  belongs_to :space
+  belongs_to :restaurant, dependent: :destroy
+  belongs_to :user, dependent: :destroy
+  belongs_to :space, dependent: :destroy
   has_many :invites
 end
