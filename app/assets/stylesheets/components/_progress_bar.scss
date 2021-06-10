@@ -45,7 +45,7 @@
 }
 
 
-.bullet.completed::after {
+.bullet.completed-line::after {
     content: '';
     position: absolute;
     right: -59px;
@@ -53,6 +53,31 @@
     height: 1px;
     width: 60px;
     background-color: #004633;
+}
+
+.bullet.completed-longer::after {
+    content: '';
+    position: absolute;
+    right: -72px;
+    bottom: 10px;
+    height: 1px;
+    width: 72px;
+    background-color: #004633;
+}
+
+.bullet.completed-l::after {
+    content: '';
+    position: absolute;
+    right: -83px;
+    bottom: 10px;
+    height: 1px;
+    width: 83px;
+    background-color: #004633;
+}
+
+.bullet-on {
+  background-color: #B3C7B0;
+
 }
 
 
