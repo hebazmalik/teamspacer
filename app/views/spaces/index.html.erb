@@ -1,5 +1,31 @@
+<br>
+<div class="container">
+  <div class="progress">
+    <!-- <div class="progress-container"> -->
+      <div class="step">
+          <p class="step-text">Search</p>
+          <div class="bullet completed completed-line"></div>
+      </div>
+      <div class="step">
+          <p class="step-text">Space</p>
+          <div class="bullet bullet-on"></div>
+      </div>
+      <div class="step">
+          <p class="step-text">Restaurant</p>
+          <div class="bullet"></div>
+      </div>
+      <div class="step">
+          <p class="step-text">Summary</p>
+          <div class="bullet"></div>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+
 <% if @area %>
   <h1>We found <%= pluralize(@area.spaces.size, "space") %> in <%= @area.name %></h1>
+
+
   <% @area.spaces.each do |space| %>
     <div>
       <%= link_to space_path(space, search: {area: params[:search][:area], space: params[:search][:space]}) do %>
@@ -15,12 +41,12 @@
           </div>
         </div>
       <% end %>
-      <%= link_to toggle_favorite_space_path(space), method: :post do  %> 
+      <%= link_to toggle_favorite_space_path(space), method: :post do  %>
         <% if space.favorited_by?(current_user) %>
           <i class="fas fa-heart"></i>
         <% else %>
           <i class="far fa-heart"></i>
-        <% end %> 
+        <% end %>
       <% end %>
     </div>
   <% end  %>
@@ -41,12 +67,12 @@
           </div>
         </div>
       <% end %>
-      <%= link_to toggle_favorite_space_path(space), method: :post do  %> 
+      <%= link_to toggle_favorite_space_path(space), method: :post do  %>
         <% if space.favorited_by?(current_user) %>
           <i class="fas fa-heart"></i>
         <% else %>
           <i class="far fa-heart"></i>
-        <% end %> 
+        <% end %>
       <% end %>
     </div>
   <% end  %>
