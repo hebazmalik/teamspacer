@@ -4,4 +4,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @plans = @user.plans
   end
+
+  # def acts_as_favoritable
+  #   @space = Space.find(1)
+  #   user.favorite(@space)
+  # end 
 end
