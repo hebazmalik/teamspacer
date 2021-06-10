@@ -1,9 +1,30 @@
-<h2>
-  <%= @user.first_name %>
-</h2>
-<p>
-  <%= @user.last_name %>
-</p>
-<p>
-  <%= @user.email %>
-</p>
+<ul class="nav nav-pills m-3 justify-content-center" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Upcoming plans</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Favourites</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <% @plans.each do |plan| %>
+      <div class="user-card">
+        <%= cl_image_tag plan.space.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="user-card-infos">
+          <p><strong>Space:</strong> <%= plan.space.name %></p>
+          <p><strong>Restaurant:</strong> <%= plan.restaurant.name %> </p>
+          <p><strong>Date:</strong> <%= plan.date %></p>
+          <p><strong>Time:</strong> <%= plan.time.strftime('%I:%M:%S %p') %></p>
+        </div>
+      </div>
+      <div class="button d-flex justify-content-between">
+        <a class="btn btn-ghost" href="#">Edit</a>
+        <a class="btn btn-ghost" href="#">Delete</a>
+      </div>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+</div>

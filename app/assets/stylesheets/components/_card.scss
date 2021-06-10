@@ -51,3 +51,31 @@ h1 {
   align-items: flex-end;
   position: relative;
 }
+
+.user-card{
+  overflow: hidden;
+  height: 120px;
+  width: 380px;
+  background: #B7C6B2;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin: 50px auto 10px;
+}
+
+.user-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.user-card p {
+  font-size: 16px;
+  margin: 0;
+  color: #004633;
+}
+
+.user-card .user-card-infos {
+  padding: 16px;
+}

@@ -2,6 +2,12 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @markers = [
+    {
+      lat: @space.latitude,
+      lng: @space.longitude
+    }
+  ]
   end
 
   def index
@@ -14,6 +20,13 @@ class SpacesController < ApplicationController
         @spaces = @spaces.where(area: @area)
       end
     end
+  end
+
+  def toggle_favorite
+    @space = Space.find_by(id: params[:id])
+    current_user.favorited?(@space)  ? current_user.unfavorite(@space) : current_user.favorite(@space)
+
+    redirect_back(fallback_location: user_path(current_user))
   end
 
   private

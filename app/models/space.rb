@@ -3,6 +3,7 @@ class Space < ApplicationRecord
   has_many :plans, dependent: :destroy
   has_many :amenities
   has_one_attached :photo
+  acts_as_favoritable
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
