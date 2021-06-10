@@ -1,4 +1,4 @@
 class Area < ApplicationRecord
-  has_many :spaces
-  has_many :restaurants
+  has_many :spaces, dependent: :destroy
+  has_many :restaurants, dependent: :destroy
 end
