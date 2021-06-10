@@ -1,3 +1,30 @@
+
+
+<br>
+<div class="container">
+  <div class="progress">
+    <!-- <div class="progress-container"> -->
+      <div class="step">
+          <p class="step-text">Search</p>
+          <div class="bullet completed completed-line"></div>
+      </div>
+      <div class="step">
+          <p class="step-text">Space</p>
+          <div class="bullet completed completed-longer"></div>
+      </div>
+      <div class="step">
+          <p class="step-text">Restaurant</p>
+          <div class="bullet bullet-on"></div>
+      </div>
+      <div class="step">
+          <p class="step-text">Summary</p>
+          <div class="bullet"></div>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+
+
 <h1>Restaurants</h1>
 
 <% @restaurants.each do |restaurant| %>
@@ -16,6 +43,7 @@
         <% end %> 
     <% end %>
     
+
     <%= link_to 'Show', restaurant %>
 <% end %>
 
