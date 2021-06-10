@@ -28,7 +28,7 @@
 
   <% @area.spaces.each do |space| %>
     <div>
-      <%= link_to space_path(space, search: {area: params[:search][:area], space: params[:search][:space]}), class: 'card-link' do %>
+      <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
         <div class="index-card">
           <% if space.photo.attached? %>
             <%= cl_image_tag space.photo.key %>
@@ -40,20 +40,20 @@
           </div>
         </div>
       <% end %>
-      <%= link_to toggle_favorite_space_path(space), method: :post do  %>
+      <%= link_to toggle_favorite_space_path(space), method: :post, remote: true do  %> 
         <% if space.favorited_by?(current_user) %>
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart" id="space-<%= space.id %>"></i>
         <% else %>
-          <i class="far fa-heart"></i>
-        <% end %>
+          <i class="far fa-heart" id="space-<%= space.id %>"></i>
+        <% end %> 
       <% end %>
     </div>
   <% end  %>
 <% else %>
-  <h1>We found <%= pluralize(@spaces.size, "space") %> near <%= params[:search][:space] %></h1>
+  <h1>We found <%= pluralize(@spaces.size, "space") %> near <%= params.dig(:search, :space) %></h1>
   <% @spaces.each do |space| %>
     <div>
-      <%= link_to space_path(space, search: {area: params[:search][:area], space: params[:search][:space]}), class: 'card-link' do %>
+      <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
         <div class="index-card">
           <% if space.photo.attached? %>
             <%= cl_image_tag space.photo.key %>
@@ -65,15 +65,29 @@
           </div>
         </div>
       <% end %>
-      <%= link_to toggle_favorite_space_path(space), method: :post do  %>
+      <%= link_to toggle_favorite_space_path(space), method: :post, anchor: "space-#{space.id}" do  %> 
         <% if space.favorited_by?(current_user) %>
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart" id="space-<%= space.id %>"></i>
         <% else %>
-          <i class="far fa-heart"></i>
-        <% end %>
+          <i class="far fa-heart" id="space-<%= space.id %>"></i>
+        <% end %> 
       <% end %>
     </div>
   <% end  %>
 <% end  %>
 
 <%= link_to "Back", root_path %>
+
+
+<% if params[:scroll].present? %>
+  <script>
+    if (localStorage['scroll']) {
+      window.scroll({ top: localStorage['scroll'] })
+    }
+  </script>
+<% end %>
+<script>
+  window.addEventListener('scroll', () => {
+    localStorage['scroll'] = window.scrollY;
+  })
+</script>
