@@ -2,7 +2,7 @@
   <h1>We found <%= pluralize(@area.spaces.size, "space") %> in <%= @area.name %></h1>
   <% @area.spaces.each do |space| %>
     <div>
-      <%= link_to space_path(space, search: {area: params[:search][:area], space: params[:search][:space]}) do %>
+      <%= link_to space_path(space, search: {area: params[:search][:area], space: params[:search][:space]}), class: 'card-link' do %>
         <div class="index-card">
           <% if space.photo.attached? %>
             <%= cl_image_tag space.photo.key %>
@@ -11,7 +11,6 @@
           <% end %>
           <div class="index-card-infos">
             <h2><%= space.name %></h2>
-            <p><%= space.location %></p>
           </div>
         </div>
       <% end %>
@@ -28,7 +27,7 @@
   <h1>We found <%= pluralize(@spaces.size, "space") %> near <%= params[:search][:space] %></h1>
   <% @spaces.each do |space| %>
     <div>
-      <%= link_to space_path(space, search: {area: params[:search][:area], space: params[:search][:space]}) do %>
+      <%= link_to space_path(space, search: {area: params[:search][:area], space: params[:search][:space]}), class: 'card-link' do %>
         <div class="index-card">
           <% if space.photo.attached? %>
             <%= cl_image_tag space.photo.key %>
@@ -37,7 +36,6 @@
           <% end %>
           <div class="index-card-infos">
             <h2><%= space.name %></h2>
-            <p><%= space.location %></p>
           </div>
         </div>
       <% end %>
