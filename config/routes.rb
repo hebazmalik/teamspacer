@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   # end
 
   resources :spaces, only: [:show, :index] do
+    member do
+      post 'toggle_favorite', to: "spaces#toggle_favorite"
+    end
     resources :plans, only: [] do
       collection do
         post :space
@@ -18,6 +21,9 @@ Rails.application.routes.draw do
   end
 
   resources :restaurants, only: [:show, :index] do
+    member do
+      post 'toggle_favorite', to: "restaurants#toggle_favorite"
+    end
     resources :plans, only: [] do
       collection do
         post :restaurant

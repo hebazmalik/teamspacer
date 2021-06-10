@@ -4,8 +4,20 @@
   <div class="show-container-infos">
     <p><%= @space.description %></p>
     <p><%= @space.location %></p>
+    <br>
+    <br>
+    <%= link_to toggle_favorite_space_path(@space), method: :post do  %> 
+      <% if @space.favorited_by?(current_user) %>
+        <i class="fas fa-heart"></i>
+      <% else %>
+        <i class="far fa-heart"></i>
+      <% end %> 
+    <% end %>
   </div>
 </div>
+
+
+
 
 <div
   id="map"
