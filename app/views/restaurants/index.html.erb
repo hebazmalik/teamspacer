@@ -8,15 +8,28 @@
     <% end %>
     <li><%= restaurant.name %></li>
 
-        <%= link_to toggle_favorite_restaurant_path(restaurant), method: :post do  %> 
-            <% if restaurant.favorited_by?(current_user) %>
-                <i class="fas fa-heart"></i>
-            <% else %>
-                <i class="far fa-heart"></i>
-            <% end %> 
-         <% end %>
+    <%= link_to toggle_favorite_restaurant_path(restaurant), method: :post,  remote: true do  %> 
+        <% if restaurant.favorited_by?(current_user) %>
+            <i class="fas fa-heart" id="restaurant-<%= restaurant.id %>"></i>
+        <% else %>
+            <i class="far fa-heart" id="restaurant-<%= restaurant.id %>"></i>
+        <% end %> 
+    <% end %>
     
     <%= link_to 'Show', restaurant %>
 <% end %>
+
+<% if params[:scroll].present? %>
+  <script>
+    if (localStorage['scroll']) {
+      window.scroll({ top: localStorage['scroll'] })
+    }
+  </script>
+<% end %>
+<script>
+  window.addEventListener('scroll', () => {
+    localStorage['scroll'] = window.scrollY;
+  })
+</script>
 
 
