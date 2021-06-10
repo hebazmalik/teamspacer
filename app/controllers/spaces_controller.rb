@@ -2,6 +2,12 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @markers = [
+    {
+      lat: @space.latitude,
+      lng: @space.longitude
+    }
+  ]
   end
 
   def index
