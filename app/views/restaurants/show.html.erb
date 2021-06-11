@@ -55,9 +55,7 @@
 
 
 <div class="show-container-select">
-<%= link_to "Back" , restaurants_path(area: params[:area], query: params[:query]), class:"btn-light" %>
+  <%= link_to "Back" , restaurants_path(area: params[:area], query: params[:query]), class:"btn-light" %>
 
-<%= link_to "Add to plan", restaurant_restaurant_plans_path(@restaurant), method: :post, class:"btn-dark" %>
-
-
+  <%= link_to "Add to plan", restaurant_restaurant_plans_path(@restaurant), method: :post, class:"btn-dark" %>
 </div>

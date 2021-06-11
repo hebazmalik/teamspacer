@@ -14,8 +14,8 @@ h1 {
   background: #B7C6B2;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   height: 230px;
-  width: 350px;
-  margin: 30px auto;
+  width: 100%;
+  margin: 10px auto;
   border-radius: 5px;
   position: relative;
 }
@@ -91,17 +91,15 @@ h1 {
   background: rgba(183, 198, 178, 0.5);
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   height: 150px;
-  width: 350px;
+  width: 100%;
   margin: 30px auto;
   border-radius: 5px;
 }
 
 .index-card-container {
-  width: 400px;
-  height: 300px;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  margin: 30px auto;
   display: flex;
   a {
     position: relative;
