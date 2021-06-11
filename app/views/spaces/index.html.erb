@@ -22,8 +22,9 @@
   </div>
 </div>
 
+<div class="index-text">
 <% if @area %>
-  <h1>We found <%= pluralize(@area.spaces.size, "space") %> in <%= @area.name %></h1>
+  <p>We found <%= pluralize(@area.spaces.size, "space") %> in <%= @area.name %>:</p>
 
 
   <% @area.spaces.each do |space| %>
@@ -52,7 +53,7 @@
     </div>
   <% end  %>
 <% else %>
-  <h1>We found <%= pluralize(@spaces.size, "space") %> near <%= params.dig(:search, :space) %></h1>
+  <p>We found <%= pluralize(@spaces.size, "space") %> near <%= params.dig(:search, :space) %></p>
   <% @spaces.each do |space| %>
     <div>
       <div class="index-card-container">
@@ -79,6 +80,7 @@
     </div>
   <% end  %>
 <% end  %>
+</div>
 
 <%= link_to "Back", root_path %>
 
