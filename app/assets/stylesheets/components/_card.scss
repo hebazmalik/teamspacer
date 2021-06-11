@@ -17,6 +17,7 @@ h1 {
   width: 350px;
   margin: 30px auto;
   border-radius: 5px;
+  position: relative;
 }
 
 .index-card > img {
@@ -83,3 +84,27 @@ h1 {
 .user-card .user-card-infos {
   padding: 16px;
 }
+
+.index-card-container {
+  width: 400px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  display: flex;
+  a {
+    position: relative;
+    .fa-heart {
+      position: absolute;
+      left: -34px;
+      bottom: -103px;
+    }
+  }
+}
+
+.fa-heart {
+  color: red;
+  font-size: x-large;
+}
+
+

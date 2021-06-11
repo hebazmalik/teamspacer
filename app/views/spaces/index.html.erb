@@ -29,50 +29,54 @@
 
   <% @area.spaces.each do |space| %>
     <div>
-      <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
-        <div class="index-card">
-          <% if space.photo.attached? %>
-            <%= cl_image_tag space.photo.key %>
-          <% else %>
-            <%= image_tag "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" %>
-          <% end %>
-          <div class="index-card-infos">
-            <h2><%= space.name %></h2>
+      <div class="index-card-container">
+        <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
+          <div class="index-card">
+            <% if space.photo.attached? %>
+              <%= cl_image_tag space.photo.key %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" %>
+            <% end %>
+            <div class="index-card-infos">
+              <h2><%= space.name %></h2>
+            </div>
           </div>
-        </div>
-      <% end %>
-      <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, remote: true do  %>
-        <% if space.favorited_by?(current_user) %>
-          <i class="fas fa-heart" id="space-<%= space.id %>"></i>
-        <% else %>
-          <i class="far fa-heart" id="space-<%= space.id %>"></i>
         <% end %>
-      <% end %>
+        <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, remote: true do  %> 
+          <% if space.favorited_by?(current_user) %>
+            <i class="fas fa-heart" id="space-<%= space.id %>"></i>
+          <% else %>
+            <i class="far fa-heart" id="space-<%= space.id %>"></i>
+          <% end %> 
+        <% end %>
+      </div>
     </div>
   <% end  %>
 <% else %>
   <p>We found <%= pluralize(@spaces.size, "space") %> near <%= params.dig(:search, :space) %></p>
   <% @spaces.each do |space| %>
     <div>
-      <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
-        <div class="index-card">
-          <% if space.photo.attached? %>
-            <%= cl_image_tag space.photo.key %>
-          <% else %>
-            <%= image_tag "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" %>
-          <% end %>
-          <div class="index-card-infos">
-            <h2><%= space.name %></h2>
+      <div class="index-card-container">
+        <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
+          <div class="index-card">
+            <% if space.photo.attached? %>
+              <%= cl_image_tag space.photo.key %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" %>
+            <% end %>
+            <div class="index-card-infos">
+              <h2><%= space.name %></h2>
+            </div>
           </div>
-        </div>
-      <% end %>
-      <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, anchor: "space-#{space.id}" do  %>
-        <% if space.favorited_by?(current_user) %>
-          <i class="fas fa-heart" id="space-<%= space.id %>"></i>
-        <% else %>
-          <i class="far fa-heart" id="space-<%= space.id %>"></i>
         <% end %>
-      <% end %>
+        <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, anchor: "space-#{space.id}" do  %> 
+          <% if space.favorited_by?(current_user) %>
+            <i class="fas fa-heart" id="space-<%= space.id %>"></i>
+          <% else %>
+            <i class="far fa-heart" id="space-<%= space.id %>"></i>
+          <% end %> 
+        <% end %>
+      </div>
     </div>
   <% end  %>
 <% end  %>
