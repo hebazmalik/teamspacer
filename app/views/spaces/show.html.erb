@@ -49,8 +49,9 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+<br>
 
 <div class="show-container-select">
-  <%= link_to "Back" , spaces_path(search: { area: params[:search][:area], space: params[:search][:space]}) %>
-  <%= link_to "Add to plan", space_space_plans_path(@space), method: :post %>
+  <%= link_to "Back" , spaces_path(search: { area: params[:search][:area], space: params[:search][:space]}), class:"btn-light" %>
+  <%= link_to "Add to plan", space_space_plans_path(@space), method: :post, class:"btn-dark" %>
 </div>
