@@ -13,7 +13,7 @@ Area.destroy_all
 User.destroy_all
 
 
-user = User.create!(email: "heba@gmail.com", password: "123456")
+user = User.create!(email: "hebam@gmail.com", password: "123456")
 
 puts "Created a user with email: heba@gmail.com and password: 123456"
 
