@@ -22,12 +22,14 @@
   </div>
 </div>
 
+<div class="container">
 <div class="index-text">
 <p><strong>Your selected space is <%= @space.name %>.</strong></p>
 <p>Here are the nearby restaurants: </p>
 
   <% @restaurants.each do |restaurant| %>
     <div>
+      <div class="index-card-container">
       <%= link_to restaurant, class: 'card-link' do %>
     <div class="index-card">
     <% if restaurant.photo.attached? %>
@@ -50,8 +52,12 @@
   </div>
   <% end %>
 </div>
-
+</div>
+</div>
+<div class="container">
 <%= link_to "Back", root_path %>
+</div>
+
 
 
 <% if params[:scroll].present? %>
