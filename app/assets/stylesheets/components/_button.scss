@@ -1,10 +1,21 @@
 a {
-  color: #004633; 
+  color: #004633;
 }
 
+
+.nav-pills .nav-link {
+    border-radius: 50px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #004633;
+}
+
+
 .btn-ghost {
-  color: #004633; 
-  border: 1px solid #004633; 
+  color: #004633;
+  border: 1px solid #004633;
   padding: 5px 50px;
   border-radius: 50px;
   background: white;
@@ -15,4 +26,37 @@ a {
 
 .btn-ghost:hover {
   opacity: 1;
+}
+
+.btn-light {
+  color: #004633;
+  border: 1px solid #B3C7B0;
+  padding: 5px 50px;
+  border-radius: 50px;
+  background: #B3C7B0;
+  font-weight: lighter;
+  transition: background 0.3s ease;
+  margin: 10px auto;
+}
+
+.btn-light:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.btn-dark {
+  color: #B3C7B0;
+  border: 1px solid #004633;
+  padding: 5px 50px;
+  border-radius: 50px;
+  background: #004633;
+  font-weight: lighter;
+  transition: background 0.3s ease;
+  margin: 10px auto;
+  margin-top: 10px;
+}
+
+.btn-dark:hover {
+  opacity: 1;
+  text-decoration: none;
 }
