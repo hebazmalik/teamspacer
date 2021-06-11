@@ -1,7 +1,11 @@
 h1 {
   font-size: 30px;
-  font-weight: bold;
   margin: 10px;
+  color: #004633;
+}
+
+.index-text p {
+  margin: 0px auto 0px 18px;
   color: #004633;
 }
 
@@ -13,6 +17,7 @@ h1 {
   width: 350px;
   margin: 30px auto;
   border-radius: 5px;
+  position: relative;
 }
 
 .index-card > img {
@@ -80,6 +85,7 @@ h1 {
   padding: 16px;
 }
 
+
 .tab-card{
   overflow: hidden;
   background: rgba(183, 198, 178, 0.5);
@@ -89,3 +95,26 @@ h1 {
   margin: 30px auto;
   border-radius: 5px;
 }
+
+.index-card-container {
+  width: 400px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  display: flex;
+  a {
+    position: relative;
+    .fa-heart {
+      position: absolute;
+      left: -34px;
+      bottom: -103px;
+    }
+  }
+}
+
+.fa-heart {
+  color: red;
+  font-size: x-large;
+}
+
