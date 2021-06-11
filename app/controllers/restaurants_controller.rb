@@ -19,8 +19,12 @@ class RestaurantsController < ApplicationController
   def toggle_favorite
     @restaurant = Restaurant.find_by(id: params[:id])
     current_user.favorited?(@restaurant)  ? current_user.unfavorite(@restaurant) : current_user.favorite(@restaurant)
-    redirect_to restaurants_path(scroll: true)
-
+    # redirect_to restaurants_path(scroll: true)
+    if params[:show].present?
+      redirect_to restaurant_path(@restaurant, search: {area: params.dig(:search, :area), restaurant: params.dig(:search, :restaurant)})
+    else
+      redirect_to restaurants_path(scroll: true, search: {area: params.dig(:search, :area), restaurant: params.dig(:search, :restaurant)})
+    end
     # redirect_back(fallback_location: user_path(current_user))
   end
 

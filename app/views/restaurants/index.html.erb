@@ -41,13 +41,13 @@
             <i class="far fa-heart" id="restaurant-<%= restaurant.id %>"></i>
         <% end %> 
     <% end %>
+    <%= link_to 'Show', restaurant %>
+  <% end %>
 </div>
 
 
     
 
-    <%= link_to 'Show', restaurant %>
-<% end %>
 
 <% if params[:scroll].present? %>
   <script>

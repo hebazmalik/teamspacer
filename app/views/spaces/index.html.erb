@@ -40,7 +40,7 @@
           </div>
         </div>
       <% end %>
-      <%= link_to toggle_favorite_space_path(space), method: :post, remote: true do  %> 
+      <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, remote: true do  %> 
         <% if space.favorited_by?(current_user) %>
           <i class="fas fa-heart" id="space-<%= space.id %>"></i>
         <% else %>
@@ -65,7 +65,7 @@
           </div>
         </div>
       <% end %>
-      <%= link_to toggle_favorite_space_path(space), method: :post, anchor: "space-#{space.id}" do  %> 
+      <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, anchor: "space-#{space.id}" do  %> 
         <% if space.favorited_by?(current_user) %>
           <i class="fas fa-heart" id="space-<%= space.id %>"></i>
         <% else %>
@@ -81,13 +81,17 @@
 
 <% if params[:scroll].present? %>
   <script>
-    if (localStorage['scroll']) {
-      window.scroll({ top: localStorage['scroll'] })
-    }
+    document.addEventListener('turbolinks:load', () => {
+      if (localStorage['scroll']) {
+        window.scroll({ top: localStorage['scroll'] })
+      }
+    })
   </script>
 <% end %>
 <script>
-  window.addEventListener('scroll', () => {
-    localStorage['scroll'] = window.scrollY;
-  })
+  document.addEventListener('turbolinks:load', () => {
+    window.addEventListener('scroll', () => {
+      localStorage['scroll'] = window.scrollY;
+    })
+  });
 </script>
