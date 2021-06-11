@@ -85,6 +85,17 @@ h1 {
   padding: 16px;
 }
 
+
+.tab-card{
+  overflow: hidden;
+  background: rgba(183, 198, 178, 0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  height: 150px;
+  width: 350px;
+  margin: 30px auto;
+  border-radius: 5px;
+}
+
 .index-card-container {
   width: 400px;
   height: 300px;
@@ -106,5 +117,4 @@ h1 {
   color: red;
   font-size: x-large;
 }
-
 
