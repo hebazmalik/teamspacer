@@ -22,8 +22,9 @@
   </div>
 </div>
 
+<div class="index-text">
 <% if @area %>
-  <h1>We found <%= pluralize(@area.spaces.size, "space") %> in <%= @area.name %></h1>
+  <p>We found <%= pluralize(@area.spaces.size, "space") %> in <%= @area.name %>:</p>
 
 
   <% @area.spaces.each do |space| %>
@@ -40,17 +41,17 @@
           </div>
         </div>
       <% end %>
-      <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, remote: true do  %> 
+      <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, remote: true do  %>
         <% if space.favorited_by?(current_user) %>
           <i class="fas fa-heart" id="space-<%= space.id %>"></i>
         <% else %>
           <i class="far fa-heart" id="space-<%= space.id %>"></i>
-        <% end %> 
+        <% end %>
       <% end %>
     </div>
   <% end  %>
 <% else %>
-  <h1>We found <%= pluralize(@spaces.size, "space") %> near <%= params.dig(:search, :space) %></h1>
+  <p>We found <%= pluralize(@spaces.size, "space") %> near <%= params.dig(:search, :space) %></p>
   <% @spaces.each do |space| %>
     <div>
       <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
@@ -65,16 +66,17 @@
           </div>
         </div>
       <% end %>
-      <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, anchor: "space-#{space.id}" do  %> 
+      <%= link_to toggle_favorite_space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), method: :post, anchor: "space-#{space.id}" do  %>
         <% if space.favorited_by?(current_user) %>
           <i class="fas fa-heart" id="space-<%= space.id %>"></i>
         <% else %>
           <i class="far fa-heart" id="space-<%= space.id %>"></i>
-        <% end %> 
+        <% end %>
       <% end %>
     </div>
   <% end  %>
 <% end  %>
+</div>
 
 <%= link_to "Back", root_path %>
 
