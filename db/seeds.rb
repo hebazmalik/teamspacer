@@ -164,11 +164,32 @@ puts "Created 116 spaces"
 
 
 restaurants_attributes = [
-  { name: "Dishoom", location: "5 Stable St, London N1C 4AB", description: "Buzzy destination for Indian street food in Bombay-style digs with vintage decor & upscale touches.", area: Area.find_by_name("North London"), price: "££", cuisine: "Indian", opening_time: 1000, closing_time: 2200 },
+  { name:"Dishoom", location: "5 Stable St, London N1C 4AB", description: "Buzzy destination for Indian street food in Bombay-style digs with vintage decor & upscale touches.", area: Area.find_by_name("North London"), price: "££", cuisine: "Indian", opening_time: 1000, closing_time: 2200 },
   { name:"Megan's", location: "27 Circus West Village, London SW11 8NN", description: "Megan’s is open for brunch, lunch, dinner and cocktails every single day!", area: Area.find_by_name("South London"), price: "££", cuisine: "Mediterranean", opening_time: 800, closing_time: 2000 },
   { name:"Levan", location: "Levan, 12-16 Blenheim Grove, London SE15 4QL", description: "Levan serves seasonal and inventive food in a relaxed setting in the heart of peckham, just off Rye Lane, moments from Peckham Overground Station.", area: Area.find_by_name("South London"), price: "££", cuisine: "European", opening_time: 1200, closing_time: 2300 },
   { name:"Salon", location: "Salon, 18 Market Row, Brixton, London SW9 8LD", description: "Salon serves seasonal and inventive food in a relaxed setting in Brixton Village market. It’s like fine dining, but without any of the fuss.", area: Area.find_by_name("South London"), price: "£££", cuisine: "European", opening_time: 1200, closing_time: 2300 },
-  { name:"Slaw", location: "149 Upper St, London N1 1RA", description: "Islington's coolest vegan restaurant.", area: Area.find_by_name("North London"), price: "£", cuisine: "Vegan", opening_time: 1000, closing_time: 1800 }
+  { name:"Slaw", location: "149 Upper St, London N1 1RA", description: "Islington's coolest vegan restaurant.", area: Area.find_by_name("North London"), price: "£", cuisine: "Vegan", opening_time: 1000, closing_time: 1800 },
+  { name:"Seabird", location: "40 Blackfriars Road, London, SE1 8PB", description: "Enjoy an impressive raw bar and panoramic views in the heart of Southwark.", area: Area.find_by_name("South London"), price: "£££", cuisine: "Portuguese and Spanish", opening_time: 1130, closing_time: 2400 },
+  { name:"Padella", location: "6 Southwark Street, Southwark, London SE1", description: "Small and fast pasta place near Borough Market.", area: Area.find_by_name("South London"), price: "££", cuisine: "Italian", opening_time: 1200, closing_time: 2200 },
+  { name:"Sorella", location: "148 Clapham Manor Street, London, SW4 6BX", description: "A superlative Italian from The Dairy team.", area: Area.find_by_name("South London"), price: "££", cuisine: "Italian", opening_time: 1200, closing_time: 1900 },
+  { name:"Native", location: "32 Southwark Street, London SE1 1TU", description: "A celebration of all things wild and British near Borough Market.", area: Area.find_by_name("South London"), price: "£££", cuisine: "British", opening_time: 1230, closing_time: 2230 },
+  { name:"The Laundry", location: "374 Coldharbour Lane, Brixton, London SW9 8PL", description: "An Edwardian laundry house swaps sheets for small plates.", area: Area.find_by_name("South London"), price: "£££", cuisine: "Australian", opening_time: 0800, closing_time: 1200 },
+  { name:"Kudu", location: "119 Queens Road, London SE15 2EZ", description: "An exciting South African small-plates menu with a Bib Gourmand.", area: Area.find_by_name("South London"), price: "£££", cuisine: "South African", opening_time: 1200, closing_time: 2200 },
+  { name:"Donelly's", location: "40 Bermondsey Street, London SE1 3UD", description: "The latest best-of-British pop-up from a young-gun chef.", area: Area.find_by_name("South London"), price: "££", cuisine: "British", opening_time: 1200, closing_time: 2100 },
+  { name:"Coal Rooms", location: "11a Station Way, Station, 4RX, Peckham Rye, London SE15", description: "The South London neighbourhood's hottest new restaurant.", area: Area.find_by_name("South London"), price: "££", cuisine: "British", opening_time: 0700, closing_time: 2200 },
+  { name:"Canova Hall", location: "250 Ferndale Road, Brixton, London SW9 8BQ", description: "A hipster Italian joint with history.", area: Area.find_by_name("South London"), price: "££", cuisine: "Italian", opening_time: 0800, closing_time: 0200 },
+  { name:"Plot", location: "70-72 Broadway Market, 29 Tooting High Street, London SW17", description: "British seasonal sharing plates in South London's newest foodie neighbourhood.", area: Area.find_by_name("South London"), price: "££", cuisine: "British", opening_time: 1200, closing_time: 0200 },
+  { name:"El Pastór", location: "6 Stoney Street, London Bridge, London SE1", description: "A colourful Mexican restaurant from the brothers behind Barrafina.", area: Area.find_by_name("South London"), price: "££", cuisine: "Mexican", opening_time: 1200, closing_time: 2200 },
+  { name:"Bar Duoro", location: "Arch 35b, Union Street, Flat Iron Square, London Bridge, London SE1", description: "Portuguese with a twist in a new foodie destination.", area: Area.find_by_name("South London"), price: "££", cuisine: "Portuguese", opening_time: 1200, closing_time: 2200 },
+  { name:"Darby's", location: "3 Viaduct Gardens, Nine Elms, London SW11", description: "The Dairy’s Robin Gill opens a super-size grill restaurant, oyster bar and bakery just south of the river.", area: Area.find_by_name("South London"), price: "££", cuisine: "Irish", opening_time: 1300, closing_time: 2200 },
+  { name:"Oblix", location: "31 St Thomas Street, London SE1 9RY", description: "An elevated experience in one of London's landmarks", area: Area.find_by_name("South London"), price: "££", cuisine: "Seafood", opening_time: 1300, closing_time: 2100 },
+  { name:"Roe", location: "Unit S38 Pop Brixton, 89 Brixton Station Road, London SW9 8PQ", description: "An innovative, fishy arrival on Pop Brixton’s laid-back dining scene.", area: Area.find_by_name("South London"), price: "££", cuisine: "Irish seafood", opening_time: 1300, closing_time: 2100 },
+  { name:"Restaurant Story", location: "199 Tooley Street, London SE1 2JX", description: "A Michelin-starred tasting menu that’s paired to the playlist.", area: Area.find_by_name("South London"), price: "££££", cuisine: "British Fusion", opening_time: 1200, closing_time: 2100 },
+  { name:"Trivet", location: "36 Snowsfields, Southwark, SE1 3SU", description: "Seriously delicious Modern British food in a not so serious setting.", area: Area.find_by_name("South London"), price: "££££", cuisine: "British", opening_time: 1200, closing_time: 2100 },
+  { name:"The Garden Café", location: "Lambeth Palace Road, SE1 7LB", description: "Tacked onto the recently opened Garden Museum, it’s a sleek Modern European spot housed in a stunning glass extension to the church.", area: Area.find_by_name("South London"), price: "£££", cuisine: "European", opening_time: 1200, closing_time: 2100 },
+  { name:"The Camberwell Arms", location: "65 Camberwell Church Street, Camberwell, SE5 8TR", description: "A handsome gastropub, serving outstanding food!", area: Area.find_by_name("South London"), price: "£££", cuisine: "British", opening_time: 1200, closing_time: 0200 },
+  { name:"Artusi", location: "161 Bellenden Road, Peckham, SE15 4DH", description: "Tucked away along Peckham’s Picturesque Bellenden Road,  Artusi serves simple and considered Mediterranean cuisine, in a laid-back, Scandi-esque setting.", area: Area.find_by_name("South London"), price: "££££", cuisine: "Mediterranean", opening_time: 1200, closing_time: 2400 },
+  { name:"Milk", location: "18-20 Bedford Hill, Balham, SW12 9RG", description: "It’s a fuss-free South London eatery, serving up everything from caramel-topped buckwheat pancakes, to scrambled eggs with smoked caviar.", area: Area.find_by_name("South London"), price: "££", cuisine: "Brunch", opening_time: 1200, closing_time: 2400 },
 ]
 
 restaurants_attributes.each do |restaurant_attribute|
@@ -179,7 +200,7 @@ restaurants_attributes.each do |restaurant_attribute|
   restaurant.save!
 end
 
-puts "Created 5 restaurants"
+puts "Created 26 restaurants"
 
 
 
