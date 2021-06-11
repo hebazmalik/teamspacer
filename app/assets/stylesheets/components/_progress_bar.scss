@@ -13,7 +13,7 @@
   margin: 0 auto;
   margin-bottom: 40px;
   border-radius: 5px;
-  padding: 40px;
+  padding: 10px;
 }
 
 
@@ -21,6 +21,7 @@
 
 .step {
     text-align: center;
+    width: 80px;
 }
 
 .step-text {
@@ -48,32 +49,14 @@
 .bullet.completed-line::after {
     content: '';
     position: absolute;
-    right: -59px;
+    right: -81px;
     bottom: 10px;
     height: 1px;
-    width: 60px;
+    width: 80px;
     background-color: #004633;
 }
 
-.bullet.completed-longer::after {
-    content: '';
-    position: absolute;
-    right: -72px;
-    bottom: 10px;
-    height: 1px;
-    width: 72px;
-    background-color: #004633;
-}
 
-.bullet.completed-l::after {
-    content: '';
-    position: absolute;
-    right: -83px;
-    bottom: 10px;
-    height: 1px;
-    width: 83px;
-    background-color: #004633;
-}
 
 .bullet-on {
   background-color: #B3C7B0;
