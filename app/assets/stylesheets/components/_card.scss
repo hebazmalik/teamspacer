@@ -79,3 +79,13 @@ h1 {
 .user-card .user-card-infos {
   padding: 16px;
 }
+
+.tab-card{
+  overflow: hidden;
+  background: rgba(183, 198, 178, 0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  height: 150px;
+  width: 350px;
+  margin: 30px auto;
+  border-radius: 5px;
+}
