@@ -8,6 +8,7 @@ class SpacesController < ApplicationController
         lng: @space.longitude
       }
     ]
+    @space_review = SpaceReview.new
   end
   
   def index

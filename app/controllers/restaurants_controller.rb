@@ -9,11 +9,12 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @markers = [
-    {
-      lat: @restaurant.latitude,
-      lng: @restaurant.longitude
-    }
-  ]
+      {
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude
+      }
+    ]
+    @restaurant_review = RestaurantReview.new
   end
 
   def toggle_favorite
