@@ -1,5 +1,5 @@
-<br>
-<div class="container">
+<%= link_to "←", root_path, class: "btn-light" %>
+<div class="container-progress-bar">
   <div class="progress">
     <!-- <div class="progress-container"> -->
       <div class="step">
@@ -32,7 +32,7 @@
     <p><%= @restaurant.description %></p>
     <p><%= @restaurant.location %></p>
     <p><%= @restaurant.cuisine %></p>
-    <br>
+    <%= link_to "Add to plan", restaurant_restaurant_plans_path(@restaurant), method: :post, class:"btn-dark" %>
     <br>
     <%= link_to toggle_favorite_restaurant_path(@restaurant), method: :post do  %>
       <% if @restaurant.favorited_by?(current_user) %>
@@ -55,7 +55,7 @@
           <i class="far fa-star"></i>
         <% end %>
         <br>
-        - <%= review.user.email %>        
+        - <%= review.user.email %>
       </div>
     <% end %>
   </div>

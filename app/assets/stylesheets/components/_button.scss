@@ -29,19 +29,20 @@ a {
 }
 
 .btn-light {
-  color: #004633;
-  border: 1px solid #B3C7B0;
-  padding: 5px 50px;
-  border-radius: 50px;
-  background: #B3C7B0;
+  color: #B3C7B0;
+  background: none;
   font-weight: lighter;
   transition: background 0.3s ease;
-  margin: 10px auto;
+  margin: 5px auto;
+  font-size: 40px;
+  margin-left: 40px;
+
 }
 
 .btn-light:hover {
   opacity: 1;
   text-decoration: none;
+  border-radius:10px;
 }
 
 .btn-dark {
@@ -54,6 +55,9 @@ a {
   transition: background 0.3s ease;
   margin: 10px auto;
   margin-top: 10px;
+  width: 100%;
+  display: block;
+  text-align: center;
 }
 
 .btn-dark:hover {
