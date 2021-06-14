@@ -137,6 +137,25 @@ h1 {
   font-size: smaller;
 }
 
+.user-card-favorite {
+  overflow: hidden;
+  height: 80px;
+  width: 380px;
+  background: #B7C6B2;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin: 12px auto 10px;
+  img {
+    height: 100%;
+    width: 150px;
+    object-fit: cover;
+  }
+  .user-card-infos {
+    padding: 16px;
+  }
+
 .plan-actions {
   position: absolute;
   right: 5px;
