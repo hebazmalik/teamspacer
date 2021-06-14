@@ -18,10 +18,14 @@
           <p><strong>Date:</strong> <%= plan.date %></p>
           <p><strong>Time:</strong> <%= plan.time.strftime('%I:%M:%S %p') %></p>
         </div>
-      </div>
-      <div class="button d-flex justify-content-between">
-        <a class="btn btn-ghost" href="#">Edit</a>
-        <a class="btn btn-ghost" href="#">Delete</a>
+        <div class="plan-actions">
+          <%= link_to edit_plan_path(plan) do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to plan_path(plan), method: :delete do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
