@@ -1,5 +1,5 @@
-<br>
-<div class="container">
+<%= link_to "←", root_path, class: "btn-light" %>
+<div class="container-progress-bar">
   <div class="progress">
       <div class="step">
           <p class="step-text">Search</p>
@@ -21,6 +21,7 @@
 
   <p id="notice"><%= notice %></p>
 
+
   <div class="show-container">
     <h1><%= @restaurant.name %></h1>
     <div class="img-wrapper">
@@ -37,6 +38,7 @@
       <p><%= @restaurant.description %></p>
       <p><%= @restaurant.location %></p>
       <p><%= @restaurant.cuisine %></p>
+       <%= link_to "Add to plan", restaurant_restaurant_plans_path(@restaurant), method: :post, class:"btn-dark" %>
       <br>
       <br>
     </div>
@@ -53,7 +55,7 @@
           <i class="far fa-star"></i>
         <% end %>
         <br>
-        - <%= review.user.email %>        
+        - <%= review.user.email %>
       </div>
     <% end %>
   </div>
