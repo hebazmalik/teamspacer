@@ -1,0 +1,8 @@
+<%= simple_form_for(@plan) do |f| %>
+  <%= f.input :meeting_point %>
+  <%= f.input :time, as: :time, html5: true %>
+  <%= f.input :date, as: :date, html5: true %>
+  <%= f.submit %>
+<% end %>
+<%= link_to 'Back to your Profile', user_path(current_user) %>
+

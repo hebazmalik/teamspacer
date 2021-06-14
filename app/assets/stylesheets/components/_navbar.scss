@@ -2,11 +2,9 @@
   justify-content: space-between;
   background: #004633;
 }
-
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
-
 .navbar .navbar-brand img {
   width: 40px;
 }
@@ -22,10 +20,10 @@
   margin-bottom: 10px;
 }
 
-// // .nav-tabs .nav-link {
-// //   color: #fff;
-// //   background-color: #B7C6B2;
-// // }
+// .nav-tabs .nav-link {
+//   color: #fff;
+//   background-color: #B7C6B2;
+// }
 
 .nav-tabs .nav-link.active {
   color: #fff;
@@ -41,7 +39,7 @@
   background-color: #B7C6B2;
   border-radius: 50px;
   color: white;
-  width: 180px;
+  width: 100%;
 }
 
 .btn-primary {
@@ -49,7 +47,7 @@
   border-radius: 50px;
 }
 
-// .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-//   // background-color: #004633;
-//   border-radius: 50px;
-// }
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #004633;
+  border-radius: 50px;
+}

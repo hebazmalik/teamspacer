@@ -26,9 +26,11 @@ require("channels")
 import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initStarRating } from '../plugins/init_star_rating';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+initStarRating();
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
