@@ -11,9 +11,12 @@ class RestaurantsController < ApplicationController
     @markers = [
     {
       lat: @restaurant.latitude,
-      lng: @restaurant.longitude
-    }
+      lng: @restaurant.longitude,
+      image_url: helpers.asset_url("picnic-black.png");
+       # info_window: render_to_string(partial: "info_window", locals: { restaurant: @restaurant })
+      }
   ]
+
   end
 
   def toggle_favorite
