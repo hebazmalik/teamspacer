@@ -1,7 +1,10 @@
 .show-container {
   height: 100%;
-  width: 350px;
-  margin: 10px auto;
+  width: 100%;
+}
+
+.show-container-infos {
+  width:350px;
 }
 
 .show-container h1 {
@@ -30,6 +33,15 @@
   position: relative;
 }
 
+
 .pointer {
   cursor: pointer;
 }
+
+.img-wrapper {
+  img {
+    width: 100%;
+  }
+}
+
+

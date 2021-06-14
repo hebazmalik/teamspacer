@@ -1,7 +1,8 @@
 .container-progress-bar {
   display:flex;
   justify-content: center;
-  width: 100%;
+  width: 90%;
+  margin: 10px auto;
 }
 
 .progress {
@@ -15,9 +16,6 @@
   border-radius: 5px;
   padding: 10px;
 }
-
-
-
 
 .step {
     text-align: center;
