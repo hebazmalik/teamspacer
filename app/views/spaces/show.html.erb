@@ -41,7 +41,7 @@
     <br>
   </div>
 </div>
-  
+
 
 <div class="review-card-container">
   <% @space.space_reviews.each do |review| %>
@@ -89,9 +89,6 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <br>
 
-  <div class="show-container-select">
-    <%= link_to "Back" , spaces_path(search: { area: params.dig(:search, :area), space: params.dig(:search, :space)}), class:"btn-light" %>
-  </div>
   <br>
 </div>
 </div>
