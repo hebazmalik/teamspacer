@@ -5,16 +5,18 @@ class SpacesController < ApplicationController
     @markers = [
       {
         lat: @space.latitude,
-        lng: @space.longitude
-      }
+        lng: @space.longitude,
+        image_url: helpers.asset_url("picnic-black.png"),
+      #    info_window: render_to_string(partial: "info_window", locals: { space: @space })
+       }
     ]
   end
-  
+
   def index
     @spaces = Space.all
     if params[:search]
       @spaces = Space.search_by_space(params[:search][:space]) if params[:search][:space].present?
-      
+
       if params[:search][:area].present?
         @area = Area.find_by_name(params[:search][:area])
         @spaces = @spaces.where(area: @area)
