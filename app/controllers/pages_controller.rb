@@ -8,7 +8,7 @@ class PagesController < ApplicationController
         lat: space.latitude,
         lng: space.longitude,
         info_window: render_to_string(partial: "info_window", locals: { space: space }),
-        image_url: helpers.asset_url("picnic-black.png")
+        image_url: helpers.asset_url("picnic-green.png")
       }
     end
   end

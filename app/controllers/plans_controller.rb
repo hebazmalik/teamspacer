@@ -1,5 +1,4 @@
 class PlansController < ApplicationController
-
   def space
     @space = Space.find(params[:space_id])
     if session[:plan].blank?
@@ -38,7 +37,28 @@ class PlansController < ApplicationController
     else
       render :new
     end
+  end
 
+  def destroy
+    @plan = Plan.find(params[:id])
+    user = @plan.user
+    @plan.destroy
+    flash[:notice] = 'Plan was successfully deleted.'
+    redirect_back(fallback_location: user_path(user))
+  end
+
+  def edit
+    @plan = Plan.find(params[:id])
+  end
+
+  def update
+    @plan = Plan.find(params[:id])
+    user = @plan.user
+    if @plan.update(plan_params)
+      redirect_to user_path(user)
+    else
+      render :edit
+    end
   end
 
   private
@@ -46,5 +66,4 @@ class PlansController < ApplicationController
   def plan_params
     params.require(:plan).permit(:time, :date, :meeting_point, :space_id, :restaurant_id)
   end
-
 end

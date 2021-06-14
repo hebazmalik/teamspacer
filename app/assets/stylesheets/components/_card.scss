@@ -46,9 +46,9 @@ h1 {
   padding: 10px;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 .user-card{
+  position: relative;
   overflow: hidden;
   height: 120px;
   width: 380px;
@@ -71,7 +71,9 @@ h1 {
 }
 .user-card .user-card-infos {
   padding: 16px;
+  position: relative;
 }
+
 
 
 .tab-card{
@@ -102,6 +104,19 @@ h1 {
 .fa-heart {
   color: #004633;
   font-size: x-large;
+}
+
+.img-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+  .fa-heart {
+    position: absolute;
+    bottom: 15px;
+    z-index: 2;
+    right: 15px;
+    color: white;
+    font-size: xx-large;
+  }
 }
 
 .review-card-container {
@@ -140,5 +155,10 @@ h1 {
   .user-card-infos {
     padding: 16px;
   }
+
+.plan-actions {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 
