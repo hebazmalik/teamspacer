@@ -1,7 +1,6 @@
 .show-container {
   height: 100%;
-  width: 350px;
-  margin: 10px auto;
+  width: 100%;
 }
 
 .show-container-infos {
@@ -33,3 +32,10 @@
   align-items: flex-end;
   position: relative;
 }
+
+.img-wrapper {
+  img {
+    width: 100%;
+  }
+}
+
