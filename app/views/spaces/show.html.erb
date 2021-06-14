@@ -77,7 +77,7 @@
          <%= simple_form_for [@space, @space_review] do |f| %>
           <%= f.input :content %>
           <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-          <%= f.submit, class: 'btn-primary' %>
+          <%= f.submit %>
         <% end %>
       </div>
     </div>
