@@ -2,37 +2,44 @@
   justify-content: space-between;
   background: #004633;
 }
-
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
-
 .navbar .navbar-brand img {
   width: 40px;
 }
 
 
 
-a {
-  color: #004633; 
+// a {
+//   color: #004633; 
+// }
+
+.nav-tabs {
+  justify-content: space-around;
+  margin-bottom: 10px;
 }
 
-.nav-pills .nav-link {
-  border-radius: 50px;
-  color: #fff;
-  background-color: #B7C6B2;
-}
+// .nav-tabs .nav-link {
+//   color: #fff;
+//   background-color: #B7C6B2;
+// }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+.nav-tabs .nav-link.active {
   color: #fff;
   background-color: #0c45356b;
 }
+
+// .nav-tabs .nav-link.active, .nav-tabs .show > .nav-link {
+//   color: #fff;
+//   // background-color: #0c45356b;
+// }
 
 .form-control {
   background-color: #B7C6B2;
   border-radius: 50px;
   color: white;
-  width: 180px;
+  width: 100%;
 }
 
 .btn-primary {

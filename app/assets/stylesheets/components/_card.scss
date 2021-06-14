@@ -3,12 +3,10 @@ h1 {
   margin: 10px;
   color: #004633;
 }
-
 .index-text p {
   margin: 0px auto 0px 18px;
   color: #004633;
 }
-
 .index-card {
   overflow: hidden;
   background: #B7C6B2;
@@ -19,13 +17,11 @@ h1 {
   border-radius: 5px;
   position: relative;
 }
-
 .index-card > img {
   height: 180px;
   width: 100%;
   object-fit: cover;
 }
-
 .index-card h2 {
   font-size: 13px;
   font-weight: bold;
@@ -34,29 +30,24 @@ h1 {
   justify-content: center;
   padding-top: 8px;
 }
-
 .index-card h2:hover {
   color: gray;
 }
-
 .card-link {
   text-decoration: none;
 }
-
 .index-card p {
   font-size: 8px;
   opacity: .7;
   margin: 0;
   color: black;
 }
-
 .index-card .index-card-infos{
   padding: 10px;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
-
 .user-card{
   overflow: hidden;
   height: 120px;
@@ -68,32 +59,29 @@ h1 {
   border-radius: 5px;
   margin: 50px auto 10px;
 }
-
 .user-card img {
   height: 100%;
   width: 120px;
   object-fit: cover;
 }
-
 .user-card p {
   font-size: 16px;
   margin: 0;
   color: #004633;
 }
-
 .user-card .user-card-infos {
   padding: 16px;
 }
 
 
 .tab-card{
-  overflow: hidden;
-  background: rgba(183, 198, 178, 0.5);
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  height: 150px;
-  width: 100%;
+  // overflow: hidden;
+  // background: rgba(183, 198, 178, 0.5);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  height: 100%;
+  width: 90%;
   margin: 30px auto;
-  border-radius: 5px;
+  // border-radius: 5px;
 }
 
 .index-card-container {
@@ -112,7 +100,7 @@ h1 {
 }
 
 .fa-heart {
-  color: red;
+  color: #004633;
   font-size: x-large;
 }
 
