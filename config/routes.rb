@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   #   resources :restaurants, only: [:index]
   # end
 
-  resources :plans, except: [:index]
+  resources :plans, except: [:index] do
+    resources :invites, only: [:create]
+  end
   resources :spaces, only: [:show, :index] do
     member do
       post 'toggle_favorite', to: "spaces#toggle_favorite"

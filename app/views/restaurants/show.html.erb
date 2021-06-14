@@ -55,7 +55,7 @@
           <i class="far fa-star"></i>
         <% end %>
         <br>
-        - <%= review.user.email %>        
+        - <%= review.user.email %>
       </div>
     <% end %>
   </div>
@@ -78,7 +78,7 @@
          <%= simple_form_for [@restaurant, @restaurant_review] do |f| %>
           <%= f.input :content %>
           <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-          <%= f.submit %>
+          <%= f.submit, class: 'btn-primary' %>
         <% end %>
       </div>
     </div>

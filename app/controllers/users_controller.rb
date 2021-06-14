@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @plans = @user.plans
     @plans = Plan.order(created_at: :desc).limit(20)
+    @invite = Invite.new
   end
 
   # def acts_as_favoritable
