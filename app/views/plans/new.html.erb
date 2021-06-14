@@ -2,7 +2,6 @@
 <br>
 <div class="container">
   <div class="progress">
-    <!-- <div class="progress-container"> -->
       <div class="step">
           <p class="step-text">Search</p>
           <div class="bullet completed completed-line"></div>
@@ -21,11 +20,22 @@
       </div>
   </div>
 
-  <h1>Complete your plan</h1>
-  <h3>Your space is:</h3>
-  <p><%= @space.name %></p>
-  <h3>Your restaurant is:</h3>
-  <p><%= @restaurant.name %></p>
+  <div class="plan-form">
+    <h1>Complete your plan</h1>
+    <h3>Your space is:</h3>
+    <div class="user-card">
+      <div class="user-card-infos">
+        <p><strong><%= @space.name %></strong></p>
+        <p><%= @space.name %></p>
+      </div>
+    </div>
+    <h3>Your restaurant is:</h3>
+    <div class="user-card">
+      <div class="user-card-infos">
+        <p><strong><%= @restaurant.name %></strong></p>
+        <p><%= @restaurant.name %></p>
+      </div>
+    </div>
     <%= simple_form_for @plan do |f| %>
       <%= f.input :space_id, :as => :hidden, :input_html => { :value => @space.id }%>
       <%= f.input :meeting_point, as: :string %>
@@ -33,5 +43,4 @@
       <%= f.input :time, as: :time, html5: true %>
       <%= f.submit, class: 'btn-primary' %>
     <% end %>
-  </div>
 </div>
