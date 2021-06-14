@@ -2,6 +2,7 @@ class Space < ApplicationRecord
   belongs_to :area
   has_many :plans, dependent: :destroy
   has_many :amenities
+  has_many :space_reviews, dependent: :destroy
   has_one_attached :photo
   acts_as_favoritable
 

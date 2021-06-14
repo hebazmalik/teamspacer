@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_100002) do
+ActiveRecord::Schema.define(version: 2021_06_14_124241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,17 @@ ActiveRecord::Schema.define(version: 2021_06_10_100002) do
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
+  create_table "restaurant_reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_restaurant_reviews_on_restaurant_id"
+    t.index ["user_id"], name: "index_restaurant_reviews_on_user_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -111,6 +122,17 @@ ActiveRecord::Schema.define(version: 2021_06_10_100002) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["area_id"], name: "index_restaurants_on_area_id"
+  end
+
+  create_table "space_reviews", force: :cascade do |t|
+    t.string "content"
+    t.bigint "space_id", null: false
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["space_id"], name: "index_space_reviews_on_space_id"
+    t.index ["user_id"], name: "index_space_reviews_on_user_id"
   end
 
   create_table "spaces", force: :cascade do |t|
@@ -146,6 +168,10 @@ ActiveRecord::Schema.define(version: 2021_06_10_100002) do
   add_foreign_key "plans", "restaurants"
   add_foreign_key "plans", "spaces"
   add_foreign_key "plans", "users"
+  add_foreign_key "restaurant_reviews", "restaurants"
+  add_foreign_key "restaurant_reviews", "users"
   add_foreign_key "restaurants", "areas"
+  add_foreign_key "space_reviews", "spaces"
+  add_foreign_key "space_reviews", "users"
   add_foreign_key "spaces", "areas"
 end

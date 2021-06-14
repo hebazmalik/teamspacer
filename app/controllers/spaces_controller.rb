@@ -6,10 +6,11 @@ class SpacesController < ApplicationController
       {
         lat: @space.latitude,
         lng: @space.longitude,
-        image_url: helpers.asset_url("picnic-black.png"),
+        image_url: helpers.asset_url("picnic-green.png"),
       #    info_window: render_to_string(partial: "info_window", locals: { space: @space })
        }
     ]
+    @space_review = SpaceReview.new
   end
 
   def index
