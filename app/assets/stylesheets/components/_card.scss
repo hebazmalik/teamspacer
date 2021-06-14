@@ -98,7 +98,27 @@ h1 {
     }
   }
 }
+
 .fa-heart {
   color: #004633;
   font-size: x-large;
 }
+
+.review-card-container {
+  background: rgba(183, 198, 178, 0.5);
+  width: 350px;
+  margin: 10px auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+}
+
+.review-card {
+  color: #004633;
+  width: 350px;
+  margin: 10px auto;
+  font-size: smaller;
+}
+

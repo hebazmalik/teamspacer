@@ -10,6 +10,7 @@ class SpacesController < ApplicationController
       #    info_window: render_to_string(partial: "info_window", locals: { space: @space })
        }
     ]
+    @space_review = SpaceReview.new
   end
 
   def index
