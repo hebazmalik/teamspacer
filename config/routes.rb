@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         post :space
       end
     end
+    resources :space_reviews, only: [:new, :create]
   end
 
   resources :restaurants, only: [:show, :index] do
@@ -30,5 +31,8 @@ Rails.application.routes.draw do
         post :restaurant
       end
     end
+    resources :restaurant_reviews, only: [:new, :create]
   end
+  resources :space_reviews, only: [:destroy]
+  resources :restaurant_reviews, only: [:destroy]
 end

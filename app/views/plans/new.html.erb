@@ -18,35 +18,19 @@
           <p class="step-text">Summary</p>
           <div class="bullet bullet-on"></div>
       </div>
-    <!-- </div> -->
+  </div>
+
+  <h1>Complete your plan</h1>
+  <h3>Your space is:</h3>
+  <p><%= @space.name %></p>
+  <h3>Your restaurant is:</h3>
+  <p><%= @restaurant.name %></p>
+    <%= simple_form_for @plan do |f| %>
+      <%= f.input :space_id, :as => :hidden, :input_html => { :value => @space.id }%>
+      <%= f.input :meeting_point, as: :string %>
+      <%= f.input :date, as: :date, html5: true %>
+      <%= f.input :time, as: :time, html5: true %>
+      <%= f.submit %>
+    <% end %>
   </div>
 </div>
-
-<div class="container">
-  <h1>Complete your plan</h1>
-</div>
-<div class="container">
-  <h3>Your space is:</h3>
-</div>
-<div class="container">
-  <p><%= @space.name %></p>
-</div>
-<div class="container">
-  <h3>Your restaurant is:</h3>
-</div>
-<div class="container">
-  <p><%= @restaurant.name %></p>
-</div>
-<div class="container">
-  <%= simple_form_for @plan do |f| %>
-    <%= f.input :space_id, :as => :hidden, :input_html => { :value => @space.id }%>
-    <%= f.input :meeting_point, as: :string %>
-    <%= f.input :time, as: :time, html5: true %>
-    <%= f.input :date, as: :date, html5: true %>
-    <%= f.submit %>
-  <% end %>
-</div>
-
-
-</div>
-

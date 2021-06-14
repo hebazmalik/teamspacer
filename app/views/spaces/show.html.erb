@@ -38,6 +38,47 @@
   </div>
 </div>
 
+<div class="review-card-container">
+  <% @space.space_reviews.each do |review| %>
+    <div class="review-card">
+      "<%= review.content%>"
+      <% review.rating.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - review.rating).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+      <br>
+      - <%= review.user.email %>
+    </div>
+  <% end %>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Add review
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a review</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <%= simple_form_for [@space, @space_review] do |f| %>
+          <%= f.input :content %>
+          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <div class="container">
@@ -50,7 +91,7 @@
   <br>
 
   <div class="show-container-select">
-    <%= link_to "Back" , spaces_path(search: { area: params[:search][:area], space: params[:search][:space]}), class:"btn-light" %>
+    <%= link_to "Back" , spaces_path(search: { area: params.dig(:search, :area), space: params.dig(:search, :space)}), class:"btn-light" %>
     <%= link_to "Add to plan", space_space_plans_path(@space), method: :post, class:"btn-dark" %>
   </div>
 </div>
