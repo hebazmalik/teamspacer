@@ -42,14 +42,18 @@
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <div class="w-100">
-            <%= simple_form_for :search, url: spaces_path, method: :get do |f| %>
-              <div class="d-flex align-items-center justify-content-around">
-                <%= f.input :area, collection: Area.pluck(:name), prompt: "Select an area", label: false, wrapper_html: { class: 'mb-0' } %>
-                <%= f.submit "Search", class: "btn btn-primary" %>
-              </div>
-            <% end %>
+          <div class="tab-sub-content">
+            <div class="w-100">
+              <%= simple_form_for :search, url: spaces_path, method: :get do |f| %>
+                <div class="d-flex justify-content-between">
+                  <%= f.input :area, collection: Area.pluck(:name), prompt: "Select an area", label: false, wrapper_html: { class: 'mb-0 ml-3' } %>
+                  <%= f.submit "Search", class: "btn btn-primary" %>
+                </div>
+              <% end %>
+            </div>
           </div>
+          
+          
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <div class="w-100">
