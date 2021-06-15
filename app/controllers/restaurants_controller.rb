@@ -4,6 +4,10 @@ class RestaurantsController < ApplicationController
     # @area = Area.find(params[:area_id])
     @space = Space.find(session[:plan]['space_id'])
     @restaurants = Restaurant.near([@space.latitude, @space.longitude], 5, units: :km)
+    @cuisines = @restaurants.map(&:cuisine).uniq
+    if params.dig(:search, :cuisines).reject(&:blank?).present?
+      @restaurants = @restaurants.where(cuisine: params.dig(:search, :cuisines).reject(&:blank?))
+    end
   end
 
   def show

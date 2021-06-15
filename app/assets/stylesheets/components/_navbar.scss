@@ -1,18 +1,21 @@
 .navbar {
   justify-content: space-between;
   background: #004633;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
 .navbar .navbar-brand img {
-  width: 40px;
+  width: 50px;
 }
 
 
 
 // a {
-//   color: #004633; 
+//   color: #004633;
 // }
 
 .nav-tabs {
