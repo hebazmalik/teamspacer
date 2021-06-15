@@ -44,24 +44,28 @@
     </div>
 
     <div class="review-card-container">
-      <% @space.space_reviews.each do |review| %>
-        <div class="review-card">
-          "<%= review.content%>"
-          <% review.rating.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - review.rating).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-          <br>
-          - <%= review.user.email %>
-        </div>
+      <% if @space.space_reviews.count.zero? %>
+        <h6>There are currently no reviews</h6>
+      <% else %>
+        <% @space.space_reviews.each do |review| %>
+          <div class="review-card">
+            "<%= review.content%>"
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <br>
+            - <%= review.user.email %>
+          </div>
+        <% end %>
       <% end %>
     </div>
-
     <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
     Add review
     </button>
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,7 +81,7 @@
             <%= simple_form_for [@space, @space_review] do |f| %>
               <%= f.input :content %>
               <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-              <%= f.submit %>
+              <%= f.submit "Add review", class: "btn-dark" %>
             <% end %>
           </div>
         </div>
