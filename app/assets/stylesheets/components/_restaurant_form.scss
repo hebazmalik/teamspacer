@@ -1,0 +1,42 @@
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #B7C6B2;
+  color: #004633;
+  border: 1px solid #004633;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector:checked + label {
+  background-color: #004633;
+  color: white;
+}
+
+abbr[title="required"] {
+  display: none;
+}
+
+.filter::after {
+  content: '';
+  background: #B7C6B2;
+  height: 1px;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+
+
