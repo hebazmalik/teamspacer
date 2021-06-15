@@ -2,7 +2,6 @@ a {
   color: #004633;
 }
 
-
 .nav-pills .nav-link {
     border-radius: 50px;
 }
@@ -11,6 +10,7 @@ a {
     color: #fff;
     background-color: #004633;
 }
+
 
 
 .btn-ghost {
@@ -67,6 +67,12 @@ a {
 .btn-primary {
   border: none;
 }
+
+.tab-content .w-100 .btn-primary {
+  border: none;
+  border-radius: 5px;
+}
+
 
 
 
