@@ -27,7 +27,7 @@
     <h1><%= @restaurant.name %></h1>
     <div class="img-wrapper">
       <%= cl_image_tag @restaurant.photo.key, height: 300, width: 400, crop: :fill %>
-      <%= link_to toggle_favorite_restaurant_path(@restaurant), method: :post do  %>
+      <%= link_to toggle_favorite_restaurant_path(@restaurant, show: true, search: {area: params.dig(:search, :area), restaurant: params.dig(:search, :restaurant)}), method: :post do  %>
         <% if @restaurant.favorited_by?(current_user) %>
           <i class="fas fa-heart"></i>
         <% else %>
