@@ -11,6 +11,47 @@
   font-weight: bold;
 }
 
-.plan-form .user-card {
-  margin: 10px auto 30px !important;
+.plan-form .form-control {
+  color: #004633;
+}
+
+.plan-form .form-control::placeholder {
+  color: #004633;
+  height: 200px;
+}
+
+.plan-form .user-card{
+  position: relative;
+  overflow: hidden;
+  height: 120px;
+  width: 380px;
+  background: #B7C6B2;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin: 10px auto 30px;
+}
+
+.plan-form .user-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.plan-form .user-card h2 {
+  font-size: 16px;
+  margin: 0;
+  color: #004633;
+}
+
+.plan-form .user-card p {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #004633;
+}
+
+.plan-form .user-card .user-card-infos {
+  padding: 16px;
+  position: relative;
 }
