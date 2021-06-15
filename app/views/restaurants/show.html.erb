@@ -46,18 +46,22 @@
   </div>
 
   <div class="review-card-container">
-    <% @restaurant.restaurant_reviews.each do |review| %>
-      <div class="review-card">
-        "<%= review.content%>"
-        <% review.rating.times do %>
-          <i class="fas fa-star"></i>
-        <% end %>
-        <% (5 - review.rating).times do %>
-          <i class="far fa-star"></i>
-        <% end %>
-        <br>
-        - <%= review.user.email %>
-      </div>
+    <% if @restaurant.restaurant_reviews.count.zero? %>
+        <h6>There are currently no reviews</h6>
+    <% else %>
+      <% @restaurant.restaurant_reviews.each do |review| %>
+        <div class="review-card">
+          "<%= review.content%>"
+          <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - review.rating).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
+          <br>
+          - <%= review.user.email %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
@@ -77,9 +81,9 @@
         </div>
         <div class="modal-body">
           <%= simple_form_for [@restaurant, @restaurant_review] do |f| %>
-            <%= f.input :content %>
+            <%= f.input :content, label: "Type your review below" %>
             <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-            <%= f.submit %>
+            <%= f.submit "Add review", class: "btn-dark"%>
           <% end %>
         </div>
       </div>
