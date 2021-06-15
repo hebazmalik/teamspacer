@@ -1,8 +1,6 @@
 .show-container {
   height: 100%;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 
 .show-container h1 {
@@ -24,13 +22,6 @@
   font-size: 15px;
   color: #004633;
 }
-
-.show-container .show-container-select{
-  justify-content: space-evenly;
-  align-items: flex-end;
-  position: relative;
-}
-
 
 .pointer {
   cursor: pointer;
