@@ -1,23 +1,26 @@
 <%= link_to "←", restaurant_path(@restaurant), class: "btn-light" %>
 <br>
-<div class="container">
-  <div class="progress">
+<div class="my-2">
+
+  <div class="container-progress-bar">
+    <div class="progress">
       <div class="step">
-          <p class="step-text">Search</p>
-          <div class="bullet completed completed-line"></div>
+        <p class="step-text">Search</p>
+        <div class="bullet completed completed-line"></div>
       </div>
-      <div class="step">
+        <div class="step">
           <p class="step-text">Space</p>
           <div class="bullet completed completed-line"></div>
-      </div>
-      <div class="step">
+        </div>
+        <div class="step">
           <p class="step-text">Restaurant</p>
           <div class="bullet completed completed-line"></div>
-      </div>
-      <div class="step">
+        </div>
+        <div class="step">
           <p class="step-text">Summary</p>
           <div class="bullet bullet-on"></div>
       </div>
+    </div>
   </div>
 
   <div class="plan-form">
@@ -44,3 +47,5 @@
       <%= f.submit %>
     <% end %>
 </div>
+</div>
+
