@@ -43,7 +43,7 @@
                 </div>
               </div>
             <% end %>
-            <%= link_to toggle_favorite_restaurant_path(restaurant), method: :post,  remote: true do  %>
+            <%= link_to toggle_favorite_restaurant_path(restaurant, search: {area: params.dig(:search, :area), restaurant: params.dig(:search, :restaurant)}), method: :post,  remote: true do  %>
               <% if restaurant.favorited_by?(current_user) %>
                 <i class="fas fa-heart" id="restaurant-<%= restaurant.id %>"></i>
               <% else %>
@@ -58,19 +58,20 @@
 </div>
 
 
-
-
 <% if params[:scroll].present? %>
   <script>
-    if (localStorage['scroll']) {
-      window.scroll({ top: localStorage['scroll'] })
-    }
+    document.addEventListener('turbolinks:load', () => {
+      if (localStorage['scroll']) {
+        window.scroll({ top: localStorage['scroll'] })
+      }
+    })
   </script>
 <% end %>
 <script>
-  window.addEventListener('scroll', () => {
-    localStorage['scroll'] = window.scrollY;
-  })
+  document.addEventListener('turbolinks:load', () => {
+    window.addEventListener('scroll', () => {
+      localStorage['scroll'] = window.scrollY;
+    })
+  });
 </script>
-
 
