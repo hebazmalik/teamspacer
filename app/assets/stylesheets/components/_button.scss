@@ -66,6 +66,13 @@ a {
 
 .btn-primary {
   border: none;
+  border: 1px solid #004633;
+  border-radius: 5px;
+  font-weight: lighter;
+  text-align: center;
+  display: block;
+  color: #B3C7B0;
+
 }
 
 .tab-content .w-100 .btn-primary {
@@ -94,4 +101,11 @@ a {
   color: #004633;
   opacity: 1;
   text-decoration: none;
+}
+
+.tag-selector + label {
+  padding: 2px 4px !important;
+  border-radius: 5px !important;
+  margin-right:6px !important;
+  margin-bottom:3px !important;
 }
