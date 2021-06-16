@@ -23,12 +23,11 @@
   </div>
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1552676382-77b33d7639fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
-    <div class="container">
+     <div class="container">
       <h1>Spacer enables you to experience London's variety of green spaces and restaurants!</h1>
       <p>Connect with friends across the city, in just a few clicks.</p>
     </div>
   </div>
-
 
   <div class="offset-sm-3 col-sm-6">
     <div class="tab-card">
@@ -42,27 +41,25 @@
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <div class="tab-sub-content">
-            <div class="w-100">
+          <div class="w-100">
+            <%= simple_form_for :search, url: spaces_path, method: :get do |f| %>
+              <div class="d-flex justify-content-between">
+                <%= f.input :area, collection: Area.pluck(:name), prompt: "Select an area", label: false, wrapper_html: { class: 'mb-0 ml-3' } %>
+                <%= f.submit "Search", class: "btn btn-primary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="w-100">
+            <div class="sub-tab">
               <%= simple_form_for :search, url: spaces_path, method: :get do |f| %>
                 <div class="d-flex justify-content-between">
-                  <%= f.input :area, collection: Area.pluck(:name), prompt: "Select an area", label: false, wrapper_html: { class: 'mb-0 ml-3' } %>
+                  <%= f.input :space, placeholder: "Find a space", label: false, wrapper_html: { class: 'mb-0' } %>
                   <%= f.submit "Search", class: "btn btn-primary" %>
                 </div>
               <% end %>
             </div>
-          </div>
-          
-          
-        </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <div class="w-100">
-            <%= simple_form_for :search, url: spaces_path, method: :get do |f| %>
-              <div class="d-flex align-items-center justify-content-around w-100">
-                <%= f.input :space, placeholder: "Find a space", label: false, wrapper_html: { class: 'mb-0' } %>
-                <%= f.submit "Search", class: "btn btn-primary" %>
-              </div>
-            <% end %>
           </div>
         </div>
       </div>
@@ -76,9 +73,6 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
   </div>
-
-
-
 </div>
 
 
