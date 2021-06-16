@@ -4,7 +4,7 @@
   color: #004633;
 }
 .index-text p {
-  margin: 0px auto 0px 18px;
+  margin: 0px;
   color: #004633;
 }
 .index-card {
@@ -23,12 +23,12 @@
   object-fit: cover;
 }
 .index-card h2 {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
   margin: 0;
   color: #004633;
   justify-content: center;
-  padding-top: 8px;
+  padding-top: 5px;
 }
 .index-card h2:hover {
   color: gray;
@@ -47,6 +47,7 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+
 
 .tab-card{
   // overflow: hidden;
@@ -84,7 +85,6 @@
   .fa-heart {
     position: absolute;
     bottom: 15px;
-    z-index: 2;
     right: 15px;
     color: white;
     font-size: xx-large;
@@ -96,7 +96,7 @@
   width: 100%;
   margin: 10px auto;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 5px;
   h6 {
     margin-bottom: 0;
   }
@@ -187,6 +187,7 @@
   right: 5px;
   bottom: 5px;
   font-size: 13px;
+  color: #004633;
 }
 
 // .br-theme-css-stars .br-widget a:after {

@@ -3,7 +3,7 @@ a {
 }
 
 .nav-pills .nav-link {
-    border-radius: 50px;
+  border-radius: 5px;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -17,7 +17,7 @@ a {
   color: #004633;
   border: 1px solid #004633;
   padding: 5px 50px;
-  border-radius: 50px;
+  border-radius: 5px;
   background: white;
   font-weight: lighter;
   transition: background 0.3s ease;
@@ -48,7 +48,7 @@ a {
   color: #B3C7B0;
   border: 1px solid #004633;
   padding: 5px 50px;
-  border-radius: 50px;
+  border-radius: 5px;
   background: #004633;
   font-weight: lighter;
   transition: background 0.3s ease;
@@ -76,22 +76,22 @@ a {
 
 
 
-// .btn-flat {
-//   color: #004633;
-//   border: 1px solid #004633;
-//   padding: 5px 15px;
-//   border-radius: 50px;
-//   background: #d6ddd3;
-//   font-weight: lighter;
-//   margin: 10px auto;
-//   transition: background 0.3s ease;
-//   display: block;
-//   float: right;
-// }
+.btn-flat {
+  color: #004633;
+  border: 1px solid #004633;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background: #f4f4f4;
+  font-weight: lighter;
+  margin: 10px auto;
+  transition: background 0.3s ease;
+  display: block;
+  float: right;
+}
 
-// .btn-flat:hover {
-//   background: #d6ddd3;
-//   color: #004633;
-//   opacity: 1;
-//   text-decoration: none;
-// }
+.btn-flat:hover {
+  background: #d6ddd3;
+  color: #004633;
+  opacity: 1;
+  text-decoration: none;
+}

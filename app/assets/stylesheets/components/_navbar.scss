@@ -12,46 +12,78 @@
   width: 50px;
 }
 
+
+
 .nav-tabs {
   justify-content: space-around;
   margin-bottom: 10px;
+  border: none;
 }
 
-.nav-link {
+.nav-tabs .nav-link {
   color: #0c45356b;
   line-height: 1.5em;
   display: inline-block;
+  border: none;
 }
 
 .nav-tabs .nav-link.active:after {
-    content: '';
-    display: block;
-    width: 100%;
-    margin-top: 5px;
-    background: #004633;
-    height: 2px;
+  content: '';
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  background: #004633;
+  height: 2px;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none !important;
 }
 
 
 
-
-.tab-content .w-100 {
+.tab-content .tab-pane .w-100 {
   overflow: hidden;
   background: #B7C6B2;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   height: 100%;
   width: 90%;
-  margin: 30px auto;
+  margin: 15px auto;
   border-radius: 5px;
+  padding: 5px;
 }
 
-.tab-content .w-100 .form-control {
+.tab-content .tab-pane .w-100 .form-control {
   background-color: #B7C6B2;
   color: white;
   width: 150%;
   margin-left: -10px;
   border: none;
 }
+
+.tab-content .tab-pane .w-100 .form-control::placeholder {
+  color: white;
+}
+
+.tab-content .tab-pane .w-100 .sub-tab .form-control {
+  background-color: #B7C6B2;
+  color: white;
+  width: 150%;
+  margin-left: 10px;
+  border: none;
+}
+
+
+
+#home {
+  color: red;
+}
+
+#home option:not(:checked) {
+  color: initial;
+}
+
 
 // .nav-tabs .nav-link.active {
 //   color: #fff;
@@ -62,17 +94,17 @@
 
 .form-control {
   background-color: #B7C6B2;
-  border-radius: 50px;
+  border-radius: 5px;
   color: white;
   width: 100%;
 }
 
 .btn-primary {
   background-color: #004633;
-  border-radius: 50px;
+  border-radius: 5px;
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
   background-color: #004633;
-  border-radius: 50px;
+  border-radius: 5px;
 }
