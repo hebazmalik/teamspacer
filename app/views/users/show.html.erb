@@ -8,26 +8,34 @@
 </ul>
 
 <div class="tab-content" id="pills-tabContent">
+
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <% @plans.each do |plan| %>
+
       <div class="user-card">
         <%= cl_image_tag plan.space.photo.key, height: 300, width: 400, crop: :fill %>
-        <div class="user-card-infos">
-          <p><strong>Space:</strong> <%= plan.space.name %></p>
-          <p><strong>Restaurant:</strong> <%= plan.restaurant.name %> </p>
-          <p><strong>Date:</strong> <%= plan.date.strftime('%d-%m-%Y') %></p>
-          <p><strong>Time:</strong> <%= plan.time.strftime('%H:%M') %></p>
-        </div>
-        <div class="plan-actions">
-          <%= link_to edit_plan_path(plan), class: 'mr-2' do %>
-            <i class="far fa-edit"></i>
-          <% end %>
-          <%= link_to plan_path(plan), method: :delete, class: 'mr-2' do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
+        <div class="user-card-info">
+          <div class="user-card-infos">
+            <p id="top-info"><strong><i class="fab fa-pagelines"></i> </strong><%= plan.space.name %></p>
+            <p id="top-info"><strong><i class="fas fa-utensils"></i></strong> <%= plan.restaurant.name %> </p>
+          </div>
+          <div class="user-card-objects">
+            <p class="calendar"><strong><i class="fas fa-calendar-week"></i></strong> <%= plan.date.strftime('%d-%m-%Y') %></p>
+            <p><strong><i class="fas fa-clock"></i></strong> <%= plan.time.strftime('%H:%M') %></p>
+          </div>
+          </div>
+          <div class="plan-actions">
+            <%= link_to edit_plan_path(plan), class: 'mr-2' do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+            <%= link_to plan_path(plan), method: :delete, class: 'mr-2' do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
           <i class="fas fa-share pointer" data-toggle="modal" data-target="#invite_modal_<%= plan.id %>"></i>
         </div>
       </div>
+
+
       <!-- Modal -->
       <div class="modal fade" id="invite_modal_<%= plan.id %>" tabindex="-1" role="dialog" aria-labelledby="invite_modal_<%= plan.id %>" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -66,7 +74,7 @@
         <div class="user-card-favorite">
           <%= cl_image_tag favorite.photo.key %>
           <div class="user-card-infos">
-            <%= favorite.name %>  
+            <%= favorite.name %>
           </div>
         </div>
       <% end %>
