@@ -1,6 +1,6 @@
 <div>
 
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1588852656640-48b816317c25?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fHBhcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);">
+  <div class="banner" id="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1588852656640-48b816317c25?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fHBhcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);">
 
 
      <div class="container">
@@ -10,9 +10,14 @@
         <p>2. Choose a restaurant</p>
         <p>3. Share with friends</p>
       </div>
+      <div class="scroll-container">
+        <p>click to scroll</p>
+        <a href="#second"><i class="fas fa-angle-double-down"></i></a>
+      </div>
     </div>
   </div>
 
+  <div id="second"></div>
 <br>
 
   <div class= "container-progress-bar my-2">
@@ -36,9 +41,6 @@
     </div>
   </div>
 
-      <%# <div class="scroll-container">
-        <div class="triangle-down" id="triangle"></div>
-      </div> %>
 
 
   <div class="offset-sm-3 col-sm-6">
@@ -88,21 +90,11 @@
 </div>
 
 
-<%# <script>
-  const downButton = document.querySelector(".triangle-down");
-  const scrollItem = document.querySelector();
-
-  downButton.addEventListener("click", (scrollItem) => {
-    scrollItem.scrollIntoView({
-      behaviour: "smooth";
-    });
-  });
-</script> %>
 
 
 
 
-
+<%# {behaviour: "smooth"} %>
 
 
 

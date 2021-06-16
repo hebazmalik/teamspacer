@@ -23,7 +23,7 @@
   object-fit: cover;
 }
 .index-card h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
   color: #004633;
@@ -47,34 +47,6 @@
   justify-content: space-between;
   align-items: flex-end;
 }
-
-.user-card{
-  position: relative;
-  overflow: hidden;
-  height: 120px;
-  width: 380px;
-  background: #B7C6B2;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  border-radius: 5px;
-  margin: 50px auto 10px;
-}
-.user-card img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-.user-card p {
-  font-size: 16px;
-  margin: 0;
-  color: #004633;
-}
-.user-card .user-card-infos {
-  padding: 16px;
-  position: relative;
-}
-
 
 
 .tab-card{
@@ -140,7 +112,7 @@
 .user-card-favorite {
   overflow: hidden;
   height: 80px;
-  width: 380px;
+  width: 100%;
   background: #B7C6B2;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -157,10 +129,60 @@
   }
 }
 
+.user-card{
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  width: 100%;
+  background: #B7C6B2;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: space-between;
+  border-radius: 5px;
+  margin: 50px auto 10px;
+}
+.user-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+.user-card p {
+  font-size: 16px;
+  margin: 0;
+  color: #004633;
+}
+.user-card .user-card-infos {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+#top-info {
+  font-size: 18px;
+}
+
+.user-card-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.user-card-objects {
+  display: flex;
+  padding: 10px;
+  padding-top: 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .plan-actions {
   position: absolute;
   right: 5px;
   bottom: 5px;
+  font-size: 13px;
   color: #004633;
 }
 
