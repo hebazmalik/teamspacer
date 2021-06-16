@@ -13,12 +13,32 @@ Area.destroy_all
 User.destroy_all
 
 
-user = User.create!(email: "hebam@gmail.com", password: "123456", first_name: "Tim")
-user2 = User.create!(email: "time@gmail.com", password: "123456", first_name: "Heba")
+user = User.create!(email: "timw@gmail.com", password: "123456", first_name: "Tim")
+
+user2 = User.create!(email: "hebam@gmail.com", password: "123456", first_name: "Heba")
+file2 = URI.open('https://res.cloudinary.com/dmgunn4aj/image/upload/v1623851240/heba_mdy1ri.jpg')
+user2.photo.attach(io: file2, filename: 'heba_mdy1ri.jpg', content_type: 'image/png')
+user2.save
+
 user3 = User.create!(email: "minjeong@gmail.com", password: "123456", first_name: "Minjeong")
+file3 = URI.open('https://res.cloudinary.com/dmgunn4aj/image/upload/v1623859045/minjeong_rfs8u1.jpg')
+user3.photo.attach(io: file3, filename: 'minjeong_rfs8u1.jpg', content_type: 'image/png')
+user3.save
+
 user4 = User.create!(email: "chloe@gmail.com", password: "123456", first_name: "Chloé")
-user5 = User.create!(email: "jo@gmail.com", password: "123456", first_name: "Jo")
-user5 = User.create!(email: "alex@gmail.com", password: "123456", first_name: "Alex")
+file4 = URI.open('https://res.cloudinary.com/dmgunn4aj/image/upload/v1623851241/chloe_oznl4b.jpg')
+user4.photo.attach(io: file4, filename: 'chloe_oznl4b.jpg', content_type: 'image/jpg')
+user4.save
+
+user5 = User.create!(email: "kiki@gmail.com", password: "123456", first_name: "Kieryn")
+file5 = URI.open('https://res.cloudinary.com/dmgunn4aj/image/upload/v1623859044/kiki_bvmjvt.jpg')
+user5.photo.attach(io: file5, filename: 'kiki_bvmjvt.jpg', content_type: 'image/jpg')
+user5.save
+
+user6 = User.create!(email: "don@gmail.com", password: "123456", first_name: "Don")
+file6 = URI.open('https://res.cloudinary.com/dmgunn4aj/image/upload/v1623859217/don_kaa0v0.png')
+user6.photo.attach(io: file6, filename: 'don_kaa0v0.png', content_type: 'image/jpg')
+user6.save
 
 puts "Created a user with email: heba@gmail.com and password: 123456"
 

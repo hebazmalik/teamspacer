@@ -23,6 +23,14 @@
               <p class="calendar"><strong><i class="fas fa-calendar-week"></i></strong> <%= plan.date.strftime('%d-%B-%Y') %></p>
               <p><strong><i class="fas fa-clock"></i></strong> <%= plan.time.strftime('%H:%M') %></p>
             </div>
+            <div class="d-flex align-items-center ml-2">
+              <% plan.invites.each do |invite| %>
+                <% if invite.user.photo.attached? %>
+                  <%= cl_image_tag invite.user.photo.key, class: 'avatar-sm mr-1' %>
+                <% else %>
+                  <%= image_tag 'tim.jpg', class: 'avatar-sm mr-1' %>
+                  <% end %>
+              <% end %>
             </div>
             <div class="plan-actions">
               <%= link_to edit_plan_path(plan), class: 'mr-2' do %>
@@ -31,10 +39,10 @@
               <%= link_to plan_path(plan), method: :delete, class: 'mr-2' do %>
                 <i class="fas fa-trash-alt"></i>
               <% end %>
-            <i class="fas fa-share pointer" data-toggle="modal" data-target="#invite_modal_<%= plan.id %>"></i>
+              <i class="fas fa-share pointer" data-toggle="modal" data-target="#invite_modal_<%= plan.id %>"></i>
+            </div>
           </div>
         </div>
-
 
         <!-- Modal -->
         <div class="modal fade" id="invite_modal_<%= plan.id %>" tabindex="-1" role="dialog" aria-labelledby="invite_modal_<%= plan.id %>" aria-hidden="true">
@@ -48,7 +56,7 @@
               </div>
               <div class="modal-body">
                 <%= simple_form_for [plan, @invite] do |f| %>
-                  <%=f.association :user, label_method: :email %>
+                  <%= f.association :user, as: :radio_buttons, label: 'Choose a friend', label_method: :first_name, input_html: { class: 'd-none' }, label_method: lambda { |user| user.photo.attached? ? cl_image_tag(user.photo.key, class: 'avatar-sm') : image_tag('tim.jpg', class: 'avatar-sm') } %>
                   <%= f.submit 'Send', class: "btn-dark" %>
                 <% end %>
               </div>
