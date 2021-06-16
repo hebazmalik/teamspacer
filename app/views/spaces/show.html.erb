@@ -1,6 +1,7 @@
 <%= link_to "←", spaces_path, class: "btn-light" %>
 
 <div class="my-2">
+
   <div class="container-progress-bar">
     <div class="progress">
       <div class="step">
@@ -37,7 +38,7 @@
       </div>
       <div class="show-container-infos">
         <p><%= @space.description %></p>
-        <p><%= @space.location %></p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= @space.location %></p>
         <%= link_to "Add to plan", space_space_plans_path(@space), method: :post, class:"btn-dark" %>
         <br>
       </div>
