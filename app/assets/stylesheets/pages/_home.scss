@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+
+.scroll-container {
+  position: relative;
+}
+
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-top: 50px solid #fff;
+  position: absolute;
+  bottom: -120px;
+  left: 44%;
+}

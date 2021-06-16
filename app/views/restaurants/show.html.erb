@@ -52,6 +52,7 @@
       <% @restaurant.restaurant_reviews.each do |review| %>
         <div class="review-card">
           "<%= review.content%>"
+          <br>
           <% review.rating.times do %>
             <i class="fas fa-star"></i>
           <% end %>
