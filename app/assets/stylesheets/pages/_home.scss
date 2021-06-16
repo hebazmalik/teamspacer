@@ -2,15 +2,21 @@
 
 .scroll-container {
   position: relative;
+	p {
+		position: absolute;
+		left: 33%;
+		bottom: -90px;
+	}
+	.fa-angle-double-down {
+		color: #fff;
+		font-size: xx-large;
+		transform: scale(1.5,1.25);
+		position: absolute;
+		bottom: -115px;
+		left: 46%;
+	}
 }
 
-.triangle-down {
-	width: 0;
-	height: 0;
-	border-left: 25px solid transparent;
-	border-right: 25px solid transparent;
-	border-top: 50px solid #fff;
-  position: absolute;
-  bottom: -120px;
-  left: 44%;
+html {
+	scroll-behavior: smooth;
 }
