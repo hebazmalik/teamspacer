@@ -41,8 +41,6 @@
     box-shadow: none !important;
 }
 
-
-
 .tab-content .tab-pane .w-100 {
   overflow: hidden;
   background: #B7C6B2;
@@ -74,24 +72,6 @@
   border: none;
 }
 
-
-
-#home {
-  color: red;
-}
-
-#home option:not(:checked) {
-  color: initial;
-}
-
-
-// .nav-tabs .nav-link.active {
-//   color: #fff;
-//   background-color: #0c45356b;
-// }
-
-
-
 .form-control {
   background-color: #B7C6B2;
   border-radius: 5px;
@@ -108,3 +88,33 @@
   background-color: #004633;
   border-radius: 5px;
 }
+
+
+
+
+
+// #home {
+//   color: red;
+// }
+
+// #home option:not(:checked) {
+//   color: initial;
+// }
+
+
+
+// option:checked {
+//   color: #004633;
+// }
+
+// #select_area:has(> option:checked) {
+//   color: #004633 !important;
+// }
+
+// option {
+//   color: #004633;
+// }
+
+// option[value=""] {
+//   color: red;
+// }
