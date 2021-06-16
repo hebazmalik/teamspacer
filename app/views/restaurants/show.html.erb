@@ -59,7 +59,8 @@
           <% (5 - review.rating).times do %>
             <i class="far fa-star"></i>
           <% end %>
-          - <%= review.user.email %>
+          <br>
+          - <%= review.user.first_name %>
         </div>
       <% end %>
     <% end %>
@@ -99,7 +100,7 @@
   <br>
 </div>
 
-  
+
 
 
 
