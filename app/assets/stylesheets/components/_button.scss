@@ -72,16 +72,13 @@ a {
   text-align: center;
   display: block;
   color: #B3C7B0;
-
+  background-color: #004633;
 }
 
-.tab-content .w-100 .btn-primary {
-  border: none;
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #004633;
   border-radius: 5px;
 }
-
-
-
 
 .btn-flat {
   color: #004633;
