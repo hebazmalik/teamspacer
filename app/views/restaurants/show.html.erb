@@ -1,4 +1,6 @@
 <%= link_to "←", restaurants_path, class: "btn-light" %>
+<div class="my-2">
+
 <div class="container-progress-bar">
   <div class="progress">
     <div class="step">
@@ -37,8 +39,8 @@
     </div>
     <div class="show-container-infos">
       <p><%= @restaurant.description %></p>
-      <p><%= @restaurant.location %></p>
-      <p><%= @restaurant.cuisine %></p>
+      <p><i class="fas fa-map-marker-alt"></i> <%= @restaurant.location %></p>
+      <p><i class="fas fa-utensils"></i> <%= @restaurant.cuisine %></p>
        <%= link_to "Add to plan", restaurant_restaurant_plans_path(@restaurant), method: :post, class:"btn-dark" %>
       <br>
       <br>
@@ -98,6 +100,8 @@
   ></div>
   <br>
 </div>
+</div>
+
 
 
 
