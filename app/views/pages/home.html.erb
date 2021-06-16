@@ -6,9 +6,11 @@
      <div class="container">
       <h2>Spacer enables you to experience London's variety of green spaces and food!</h2>
       <div class="steps-box">
-        <p>1. Choose a space</p>
-        <p>2. Choose a restaurant</p>
-        <p>3. Share with friends</p>
+        <ol>
+          <li>Choose a space</li>
+          <li>Choose a restaurant</li>
+          <li>Share with friends</li>
+        </ol>
       </div>
       <div class="scroll-container">
         <p>click to scroll</p>
@@ -18,7 +20,7 @@
   </div>
 
   <div id="second"></div>
-<br>
+  <br>
 
   <div class= "container-progress-bar my-2">
     <div class="progress">
@@ -80,12 +82,14 @@
     </div>
   </div>
 
-  <div
-    id="map"
-    style="width: 100%; height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+  <div class="container mb-3">
+    <div
+      id="map"
+      style="width: 100%; height: 360px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+    </div>
   </div>
 </div>
 
