@@ -40,8 +40,8 @@
             </div>
             <div class="modal-body">
                <%= simple_form_for [plan, @invite] do |f| %>
-                <%=f.association :user, label_method: :first_name %>
-                <%= f.submit 'Send', class: 'btn-primary' %>
+                <%=f.association :user, label_method: :email %>
+                <%= f.submit 'Send', class: "btn-dark" %>
               <% end %>
             </div>
           </div>

@@ -56,13 +56,12 @@
             <% (5 - review.rating).times do %>
               <i class="far fa-star"></i>
             <% end %>
-            <br>
-            - <%= review.user.first_name %>
+            - <em><%= review.user.first_name %></em>
           </div>
         <% end %>
       <% end %>
     </div>
-    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#exampleModal">
     Add review
     </button>
 
