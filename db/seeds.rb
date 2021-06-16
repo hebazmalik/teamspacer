@@ -13,7 +13,12 @@ Area.destroy_all
 User.destroy_all
 
 
-user = User.create!(email: "hebam@gmail.com", password: "123456")
+user = User.create!(email: "hebam@gmail.com", password: "123456", first_name: "Heba")
+user2 = User.create!(email: "time@gmail.com", password: "123456", first_name: "Tim")
+user3 = User.create!(email: "minjeong@gmail.com", password: "123456", first_name: "Minjeong")
+user4 = User.create!(email: "chloe@gmail.com", password: "123456", first_name: "Chloé")
+user5 = User.create!(email: "jo@gmail.com", password: "123456", first_name: "Jo")
+user5 = User.create!(email: "alex@gmail.com", password: "123456", first_name: "Alex")
 
 puts "Created a user with email: heba@gmail.com and password: 123456"
 
