@@ -1,0 +1,12 @@
+.invite_user {
+  .form-check {
+    display: inline-block;
+  }
+  input + label {
+    border: 2px solid transparent;
+    border-radius: 50%;
+  }
+  input:checked + label {
+    border: 2px solid #004633;
+  }
+}

@@ -4,7 +4,7 @@ class InvitesController < ApplicationController
     @invite = Invite.new(invite_params)
     @invite.plan = @plan
     if @invite.save
-      redirect_to user_path(current_user), notice: "#{@invite.user.email} was added to your plan"
+      redirect_to user_path(current_user), notice: "#{@invite.user.first_name} was added to your plan"
     else
       redirect_to user_path(current_user), alert: "Please select a user"
     end
