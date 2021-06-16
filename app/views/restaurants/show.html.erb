@@ -1,106 +1,106 @@
 <%= link_to "←", restaurants_path, class: "btn-light" %>
-<div class="my-2">
 
-<div class="container-progress-bar">
-  <div class="progress">
-    <div class="step">
-      <p class="step-text">Search</p>
-      <div class="bullet completed completed-line"></div>
-    </div>
-    <div class="step">
-      <p class="step-text">Space</p>
-      <div class="bullet completed completed-line"></div>
-    </div>
-    <div class="step">
-      <p class="step-text">Restaurant</p>
-      <div class="bullet bullet-on"></div>
-    </div>
-    <div class="step">
-      <p class="step-text">Summary</p>
-      <div class="bullet"></div>
-    </div>
-  </div>
-</div>
+<div class="mb-3">
 
-<div class="container">
-  <p id="notice"><%= notice %></p>
-
-  <div class="show-container">
-    <h1><%= @restaurant.name %></h1>
-    <div class="img-wrapper">
-      <%= cl_image_tag @restaurant.photo.key, height: 300, width: 400, crop: :fill %>
-      <%= link_to toggle_favorite_restaurant_path(@restaurant, show: true, search: {area: params.dig(:search, :area), restaurant: params.dig(:search, :restaurant)}), method: :post do  %>
-        <% if @restaurant.favorited_by?(current_user) %>
-          <i class="fas fa-heart"></i>
-        <% else %>
-          <i class="far fa-heart"></i>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="show-container-infos">
-      <p><%= @restaurant.description %></p>
-      <p><i class="fas fa-map-marker-alt"></i> <%= @restaurant.location %></p>
-      <p><i class="fas fa-utensils"></i> <%= @restaurant.cuisine %></p>
-       <%= link_to "Add to plan", restaurant_restaurant_plans_path(@restaurant), method: :post, class:"btn-dark" %>
-      <br>
-      <br>
-    </div>
-  </div>
-
-  <div class="review-card-container">
-    <% if @restaurant.restaurant_reviews.count.zero? %>
-        <h6>There are currently no reviews</h6>
-    <% else %>
-      <% @restaurant.restaurant_reviews.each do |review| %>
-        <div class="review-card">
-          "<%= review.content%>"
-          <br>
-          <% review.rating.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - review.rating).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-          - <em><%= review.user.first_name %></em>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
-  <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#exampleModal">
-    Add review
-  </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a review</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for [@restaurant, @restaurant_review] do |f| %>
-            <%= f.input :content, label: "Type your review below" %>
-            <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-            <%= f.submit "Add review", class: "btn-dark"%>
-          <% end %>
-        </div>
+  <div class="container-progress-bar">
+    <div class="progress">
+      <div class="step">
+        <p class="step-text">Search</p>
+        <div class="bullet completed completed-line"></div>
+      </div>
+      <div class="step">
+        <p class="step-text">Space</p>
+        <div class="bullet completed completed-line"></div>
+      </div>
+      <div class="step">
+        <p class="step-text">Restaurant</p>
+        <div class="bullet bullet-on"></div>
+      </div>
+      <div class="step">
+        <p class="step-text">Summary</p>
+        <div class="bullet"></div>
       </div>
     </div>
   </div>
 
-  <div
-    id="map"
-    style="width: 100%; height:300px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-  <br>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+
+    <div class="show-container">
+      <h1><%= @restaurant.name %></h1>
+      <div class="img-wrapper">
+        <%= cl_image_tag @restaurant.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= link_to toggle_favorite_restaurant_path(@restaurant, show: true, search: {area: params.dig(:search, :area), restaurant: params.dig(:search, :restaurant)}), method: :post do  %>
+          <% if @restaurant.favorited_by?(current_user) %>
+            <i class="fas fa-heart"></i>
+          <% else %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="show-container-infos">
+        <p><%= @restaurant.description %></p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= @restaurant.location %></p>
+        <p><i class="fas fa-utensils"></i> <%= @restaurant.cuisine %></p>
+        <%= link_to "Add to plan", restaurant_restaurant_plans_path(@restaurant), method: :post, class:"btn-dark" %>
+      </div>
+    </div>
+
+    <div class="review-card-container">
+      <% if @restaurant.restaurant_reviews.count.zero? %>
+          <h6>There are currently no reviews...</h6>
+      <% else %>
+        <% @restaurant.restaurant_reviews.each do |review| %>
+          <div class="review-card">
+            "<%= review.content%>"
+            <br>
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            - <em><%= review.user.first_name %></em>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#exampleModal">
+      Add review
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add a review</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for [@restaurant, @restaurant_review] do |f| %>
+              <%= f.input :content, label: "Type your review below" %>
+              <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+              <%= f.submit "Add review", class: "btn-dark"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="map"
+      style="width: 100%; height:300px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+
+  </div>
 </div>
-</div>
+
 
 
 
