@@ -75,6 +75,16 @@
 }
 
 
+
+#home {
+  color: red;
+}
+
+#home option:not(:checked) {
+  color: initial;
+}
+
+
 // .nav-tabs .nav-link.active {
 //   color: #fff;
 //   background-color: #0c45356b;
@@ -84,17 +94,17 @@
 
 .form-control {
   background-color: #B7C6B2;
-  border-radius: 50px;
+  border-radius: 5px;
   color: white;
   width: 100%;
 }
 
 .btn-primary {
   background-color: #004633;
-  border-radius: 50px;
+  border-radius: 5px;
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
   background-color: #004633;
-  border-radius: 50px;
+  border-radius: 5px;
 }
