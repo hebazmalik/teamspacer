@@ -1,5 +1,4 @@
 <%= link_to "←", restaurants_path, class: "btn-light" %>
-<div class="my-2">
 
 <div class="container-progress-bar">
   <div class="progress">
@@ -42,8 +41,6 @@
       <p><i class="fas fa-map-marker-alt"></i> <%= @restaurant.location %></p>
       <p><i class="fas fa-utensils"></i> <%= @restaurant.cuisine %></p>
        <%= link_to "Add to plan", restaurant_restaurant_plans_path(@restaurant), method: :post, class:"btn-dark" %>
-      <br>
-      <br>
     </div>
   </div>
 
@@ -99,7 +96,7 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
   <br>
-</div>
+  </div>
 </div>
 
 
