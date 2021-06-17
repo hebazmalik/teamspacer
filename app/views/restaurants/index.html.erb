@@ -42,7 +42,7 @@
       <p><strong>Your selected space is <%= @space.name %>.</strong></p>
       <p>Here are the nearby restaurants: </p>
 
-      <% @restaurants.each do |restaurant| %>
+      <% @restaurants.reorder(:name).each do |restaurant| %>
         <div>
           <div class="index-card-container">
             <%= link_to restaurant, class: 'card-link' do %>
