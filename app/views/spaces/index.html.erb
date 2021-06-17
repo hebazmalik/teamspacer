@@ -31,7 +31,7 @@
       <% @area.spaces.order(:name).each do |space| %>
         <div>
           <div class="index-card-container">
-            <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
+            <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link w-100' do %>
               <div class="index-card">
                 <% if space.photo.attached? %>
                   <%= cl_image_tag space.photo.key %>
@@ -58,7 +58,7 @@
       <% @spaces.reorder(:name).each do |space| %>
         <div>
           <div class="index-card-container">
-            <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
+            <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link w-100' do %>
               <div class="index-card">
                 <% if space.photo.attached? %>
                   <%= cl_image_tag space.photo.key %>

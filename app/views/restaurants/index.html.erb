@@ -45,7 +45,7 @@
       <% @restaurants.reorder(:name).each do |restaurant| %>
         <div>
           <div class="index-card-container">
-            <%= link_to restaurant, class: 'card-link' do %>
+            <%= link_to restaurant, class: 'card-link w-100' do %>
               <div class="index-card">
                 <% if restaurant.photo.attached? %>
                   <%= cl_image_tag restaurant.photo.key %>

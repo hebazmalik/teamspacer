@@ -39,4 +39,12 @@
 
 html {
 	scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+#search_area {
+  outline: none;
+  background: none;
+  border: 0;
+  box-shadow: none;
 }

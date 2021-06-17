@@ -28,10 +28,12 @@ class PlansController < ApplicationController
 
   def create
     @plan = Plan.new(plan_params)
-    @plan.space_id = session[:plan]['space_id']
-    @plan.restaurant_id = session[:plan]['restaurant_id']
+    @space = Space.find(session[:plan]['space_id'])
+    @restaurant = Restaurant.find(session[:plan]['restaurant_id'])
+    @plan.space = @space
+    @plan.restaurant = @restaurant
     @plan.user = current_user
-    if @plan.save!
+    if @plan.save
       redirect_to user_path(current_user)
       session[:plan] = nil
     else
