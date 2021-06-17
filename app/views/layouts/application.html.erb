@@ -46,6 +46,10 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <%= favicon_link_tag %>
+    <script>
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.setProperty('--vh', `${vh}px`);
+    </script>
   </head>
 
   <body>

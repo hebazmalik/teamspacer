@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 142px 0 127px 0;
-  height: 100%;
+  height: calc(var(--vh) * 100);
 }
 
 .banner h2 {

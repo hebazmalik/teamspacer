@@ -4,7 +4,9 @@
     <% end %>
 
   <% if user_signed_in? %>
-    <%= image_tag "tim.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { target: "#navbarSupportedContent", toggle: 'collapse' }, type: 'button', 'aria-controls': 'navbarSupportedContent', 'aria-expanded': false, 'aria-label': 'Toggle navigation' %>
+    <div class="" id="navbarDropdown" data-target="#navbarSupportedContent" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+      <%= image_tag "tim.jpg", class: "avatar" %>
+    </div>
   <% else %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
