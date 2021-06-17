@@ -1,8 +1,14 @@
-<%= simple_form_for(@plan) do |f| %>
-  <%= f.input :meeting_point %>
-  <%= f.input :time, as: :time, html5: true %>
-  <%= f.input :date, as: :date, html5: true %>
-  <%= f.submit class: 'btn-dark' %>
-<% end %>
-<%= link_to 'Back to your Profile', user_path(current_user) %>
-
+<%= link_to "←", user_path(current_user), class: "btn-light" %>
+<br>
+<div class="my-2">
+  <div class="container">
+    <div class="plan-form">
+      <%= simple_form_for(@plan) do |f| %>
+        <%= f.input :meeting_point %>
+        <%= f.input :date, as: :date, html5: true %>
+        <%= f.input :time, as: :time, html5: true %>
+        <%= f.submit class: 'btn-dark' %>
+      <% end %>
+    </div>
+  </div>
+</div>
