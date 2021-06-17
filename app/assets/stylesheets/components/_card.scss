@@ -178,8 +178,12 @@
   position: absolute;
   right: 5px;
   bottom: 5px;
-  font-size: 13px;
+  font-size: 18px;
   color: #004633;
+  margin-left: 12px;
+  .fas {
+    margin-left: 8px;
+  }
 }
 
 .plan-cta {
