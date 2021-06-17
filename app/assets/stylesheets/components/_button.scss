@@ -80,6 +80,28 @@ a {
   border-radius: 5px;
 }
 
+.container .form-actions .btn-flat {
+  color: #004633;
+  border: 1px solid #004633;
+  border-radius: 5px;
+  background: #f4f4f4 !important;
+  font-weight: lighter;
+  text-align: center;
+  display: block;
+  transition: background 0.3s ease;
+  padding: 0px 4px !important;
+  margin: 0px !important;
+  float: none !important;
+}
+
+.container .form-actions .btn-flat, .btn-flat:hover, .btn-flat:active, .btn-flat:visited {
+  background: #d6ddd3;
+  border-radius: 5px;
+  color: #004633;
+  opacity: 1;
+  text-decoration: none;
+}
+
 .btn-flat {
   color: #004633;
   border: 1px solid #004633;
