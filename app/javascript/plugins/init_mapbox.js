@@ -9,9 +9,9 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 
-const mapElement = document.getElementById('map');
 const initMapbox = () => {
-
+  const mapElement = document.getElementById('map');
+  console.log('hi');
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -30,6 +30,9 @@ const initMapbox = () => {
       fitMapToMarkers(map, markers);
     }
   }
+  // if (!mapElement?.querySelector('canvas')) {
+  //   window.location.reload();
+  // }
 };
 
 const addMarkersToMap = (map, markers) => {

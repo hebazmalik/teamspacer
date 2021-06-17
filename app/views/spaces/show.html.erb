@@ -1,4 +1,4 @@
-<%= link_to "←", spaces_path, class: "btn-light" %>
+<%= link_to "←", spaces_path(search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: "btn-light" %>
 
 <div class="mb-3">
 
