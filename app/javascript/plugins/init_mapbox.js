@@ -1,3 +1,5 @@
+// import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
+// import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 import mapboxgl from '!mapbox-gl';
 
 const fitMapToMarkers = (map, markers) => {
@@ -23,8 +25,10 @@ const initMapbox = () => {
     //   .setLngLat([ marker.lng, marker.lat ])
     //   .addTo(map);
     // });
-    addMarkersToMap(map, markers);
-    fitMapToMarkers(map, markers);
+    if (map && markers) {
+      addMarkersToMap(map, markers);
+      fitMapToMarkers(map, markers);
+    }
   }
 };
 
