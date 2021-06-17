@@ -5,4 +5,5 @@ class Plan < ApplicationRecord
   has_many :invites
   validates :time, presence: true
   validates :date, presence: true
+  validates :meeting_point, presence: true
 end
