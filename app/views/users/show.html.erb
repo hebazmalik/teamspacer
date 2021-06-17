@@ -33,10 +33,10 @@
               <% end %>
             </div>
             <div class="plan-actions">
-              <%= link_to edit_plan_path(plan), class: 'mr-2' do %>
+              <%= link_to edit_plan_path(plan), class: 'mr-2 plan-cta' do %>
                 <i class="far fa-edit"></i>
               <% end %>
-              <%= link_to plan_path(plan), method: :delete, class: 'mr-2' do %>
+              <%= link_to plan_path(plan), method: :delete, class: 'mr-2 plan-cta' do %>
                 <i class="fas fa-trash-alt"></i>
               <% end %>
               <i class="fas fa-share pointer" data-toggle="modal" data-target="#invite_modal_<%= plan.id %>"></i>
