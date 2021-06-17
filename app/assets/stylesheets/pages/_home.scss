@@ -2,25 +2,33 @@
 
 .scroll-container {
   position: relative;
+	width: 100%;
 	p {
-		position: absolute;
-		left: 31%;
-		bottom: -85px;
-		opacity: 0.7;
+		// position: absolute;
+		text-align: center;
+		// left: 31%;
+		// bottom: -85px;
+		opacity: 0.8;
+		margin-bottom: 5px;
 		&:hover {
 			opacity: 1;
 		}
 	}
-	.fa-angle-double-down {
-		color: #fff;
-		font-size: xx-large;
-		transform: scale(1.5,1.25);
-		position: absolute;
-		bottom: -105px;
-		left: 46%;
-		opacity: 0.7;
-		&:hover {
-			opacity: 1;
+	a {
+		// text-align: center;
+		// width: 100%;
+		.fa-angle-double-down {
+			color: #fff;
+			// text-align: center;
+			font-size: xx-large;
+			transform: scale(1.5,1.25);
+			position: absolute;
+			// bottom: -105px;
+			left: 46%;
+			opacity: 0.7;
+			&:hover {
+				opacity: 1;
+			}
 		}
 	}
 }
