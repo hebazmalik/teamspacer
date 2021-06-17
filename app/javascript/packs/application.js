@@ -34,6 +34,8 @@ import { smoothScroll } from '../components/smooth_scroll';
 
 
 document.addEventListener('turbolinks:load', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
   initMapbox();
   initStarRating();
   smoothScroll();
