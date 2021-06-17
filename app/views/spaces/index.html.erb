@@ -28,7 +28,7 @@
 
 
 
-      <% @area.spaces.each do |space| %>
+      <% @area.spaces.order(:name).each do |space| %>
         <div>
           <div class="index-card-container">
             <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>
@@ -55,7 +55,7 @@
       <% end  %>
     <% else %>
       <p>We found <%= pluralize(@spaces.size, "space") %> near <%= params.dig(:search, :space) %></p>
-      <% @spaces.each do |space| %>
+      <% @spaces.reorder(:name).each do |space| %>
         <div>
           <div class="index-card-container">
             <%= link_to space_path(space, search: {area: params.dig(:search, :area), space: params.dig(:search, :space)}), class: 'card-link' do %>

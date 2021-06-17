@@ -17,7 +17,6 @@ class SpacesController < ApplicationController
     @spaces = Space.all
     if params[:search]
       @spaces = Space.search_by_space(params[:search][:space]) if params[:search][:space].present?
-
       if params[:search][:area].present?
         @area = Area.find_by_name(params[:search][:area])
         @spaces = @spaces.where(area: @area)
