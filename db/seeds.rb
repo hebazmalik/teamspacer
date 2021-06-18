@@ -142,7 +142,6 @@ space_attributes = [
   { name: "Queen Elizabeth Olympic Park", location: "Brockwell Park, Brockwell Park Gardens, London SE24 9BJ", description: "Brockwell Park is a 50.8 hectare park located south of Brixton, in Herne Hill and Tulse Hill in south London. It is bordered by the roads Brixton Water Lane, Norwood Road, Tulse Hill and Dulwich Road. The park commands views of the skyline of the city and Central London.", area: Area.find_by_name("East London")},
   { name: "Tower Hamlets Cemetery Park", location: "Brockwell Park, Brockwell Park Gardens, London SE24 9BJ", description: "Brockwell Park is a 50.8 hectare park located south of Brixton, in Herne Hill and Tulse Hill in south London. It is bordered by the roads Brixton Water Lane, Norwood Road, Tulse Hill and Dulwich Road. The park commands views of the skyline of the city and Central London.", area: Area.find_by_name("East London")},
   { name: "Hackney Downs", location: "Brockwell Park, Brockwell Park Gardens, London SE24 9BJ", description: "Brockwell Park is a 50.8 hectare park located south of Brixton, in Herne Hill and Tulse Hill in south London. It is bordered by the roads Brixton Water Lane, Norwood Road, Tulse Hill and Dulwich Road. The park commands views of the skyline of the city and Central London.", area: Area.find_by_name("East London")},
-
   { name: "Springfield Park", location: "Brockwell Park, Brockwell Park Gardens, London SE24 9BJ", description: "Brockwell Park is a 50.8 hectare park located south of Brixton, in Herne Hill and Tulse Hill in south London. It is bordered by the roads Brixton Water Lane, Norwood Road, Tulse Hill and Dulwich Road. The park commands views of the skyline of the city and Central London.", area: Area.find_by_name("East London")},
   { name: "Woodberry Wetlands", location: "Brockwell Park, Brockwell Park Gardens, London SE24 9BJ", description: "Brockwell Park is a 50.8 hectare park located south of Brixton, in Herne Hill and Tulse Hill in south London. It is bordered by the roads Brixton Water Lane, Norwood Road, Tulse Hill and Dulwich Road. The park commands views of the skyline of the city and Central London.", area: Area.find_by_name("North London")},
   { name: "Mudchute Park and Farm", location: "Brockwell Park, Brockwell Park Gardens, London SE24 9BJ", description: "Brockwell Park is a 50.8 hectare park located south of Brixton, in Herne Hill and Tulse Hill in south London. It is bordered by the roads Brixton Water Lane, Norwood Road, Tulse Hill and Dulwich Road. The park commands views of the skyline of the city and Central London.", area: Area.find_by_name("East London")},
@@ -184,9 +183,54 @@ space_attributes.each do |space_attribute|
   space.save!
 end
 
-file = URI.open("https://blackcablondon.files.wordpress.com/2012/07/battersea-pagoda.jpg")
+file1 = URI.open("https://blackcablondon.files.wordpress.com/2012/07/battersea-pagoda.jpg")
 space = Space.find_by(name: "Battersea Park")
-space.photo.attach(io: file, filename: "battersea-pagoda.jpg", content_type: file.content_type_parse.first)
+space.photo.attach(io: file1, filename: "battersea-pagoda.jpg", content_type: file1.content_type_parse.first)
+space.save!
+
+file2 = URI.open("https://assets.londonist.com/uploads/2019/08/i875/beckenham-place-park-wild-swimming-lake-1607a.jpg")
+space = Space.find_by(name: "Beckenham Place Park")
+space.photo.attach(io: file2, filename: "beckenham-place-park-wild-swimming-lake-1607a.jpg", content_type: file2.content_type_parse.first)
+space.save!
+
+file3 = URI.open("https://londongardenstrust.org/inventory/images/sitepics/SOU007-site.jpg")
+space = Space.find_by(name: "Belair Park")
+space.photo.attach(io: file3, filename: "SOU007-site.jpg", content_type: file3.content_type_parse.first)
+space.save!
+
+file4 = URI.open("https://i1.wp.com/www.theculturemap.com/wp-content/uploads/2020/06/blackheath-parks-in-london.jpg")
+space = Space.find_by(name: "Blackheath")
+space.photo.attach(io: file4, filename: "blackheath-parks-in-london.jpg", content_type: file4.content_type_parse.first)
+space.save!
+
+file5 = URI.open("https://i0.wp.com/www.brixtonbuzz.com/images/brockwell-park-dec-2020-01.jpg")
+space = Space.find_by(name: "Brockwell Park")
+space.photo.attach(io: file5, filename: "brockwell-park-dec-2020-01.jpg", content_type: file5.content_type_parse.first)
+space.save!
+
+file6 = URI.open("https://images-production.gardenvisit.com/uploads/images/16278/burgess_park_1289_jpg_original.jpg")
+space = Space.find_by(name: "Burgess Park")
+space.photo.attach(io: file6, filename: "burgess_park_1289_jpg_original.jpg", content_type: file6.content_type_parse.first)
+space.save!
+
+file7 = URI.open("https://hidden-london.com/wp-content/uploads/2011/08/Clapham-Common-pond-800-1280x720.png")
+space = Space.find_by(name: "Clapham Common")
+space.photo.attach(io: file7, filename: "Clapham-Common-pond-800-1280x720.png", content_type: file7.content_type_parse.first)
+space.save!
+
+file8 = URI.open("https://upload.wikimedia.org/wikipedia/commons/3/39/Crystal_Palace_Park.jpg")
+space = Space.find_by(name: "Crystal Palace Common")
+space.photo.attach(io: file8, filename: "Crystal_Palace_Park.jpg", content_type: file8.content_type_parse.first)
+space.save!
+
+file9 = URI.open("https://datastories-deptford.citizensense.net/wp-content/uploads/2017/11/Deptford_Park-1024x683.jpg")
+space = Space.find_by(name: "Deptford Park")
+space.photo.attach(io: file9, filename: "Deptford_Park-1024x683.jpg", content_type: file9.content_type_parse.first)
+space.save!
+
+file10 = URI.open("https://www.londonxlondon.com/wp-content/uploads/2020/06/Dulwich-Park-4.jpg")
+space = Space.find_by(name: "Dulwich Park")
+space.photo.attach(io: file10, filename: "Dulwich-Park-4.jpg", content_type: file10.content_type_parse.first)
 space.save!
 
 puts "Created 116 spaces"
@@ -246,6 +290,17 @@ restaurants_attributes.each do |restaurant_attribute|
   restaurant.photo.attach(io: file, filename: "food", content_type: file.content_type_parse.first)
   restaurant.save!
 end
+
+
+file11 = URI.open("https://www.arabnews.com/sites/default/files/styles/n_670_395/public/2017/11/13/1032401-2146920921.jpg")
+restaurant = Restaurant.find_by(name: "Piatto")
+restaurant.photo.attach(io: file11, filename: "1032401-2146920921.jpg", content_type: file11.content_type_parse.first)
+restaurant.save!
+
+file12 = URI.open("https://duyt4h9nfnj50.cloudfront.net/resized/bulk_actions_image_76593f36-9e44-4a75-bd08-be35067e5a29-w2880-4c.jpg")
+restaurant = Restaurant.find_by(name: "Mumbai Delight")
+restaurant.photo.attach(io: file12, filename: "bulk_actions_image_76593f36-9e44-4a75-bd08-be35067e5a29-w2880-4c.jpg", content_type: file12.content_type_parse.first)
+restaurant.save!
 
 puts "Created 43 restaurants"
 
