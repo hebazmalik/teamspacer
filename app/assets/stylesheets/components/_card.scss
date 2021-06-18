@@ -99,10 +99,15 @@
 }
 
 .review-card {
-  color: #004633;
-  width: 350px;
+  width: calc(100% - 20px);
   margin: 10px;
-  font-size: smaller;
+  span {
+    word-break: word-break;
+    font-size: smaller;
+    color: #004633;
+    display: inline-block;
+    overflow-wrap: break-word;
+  }
 }
 
 .user-card-favorite {
