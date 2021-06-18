@@ -218,11 +218,6 @@ space = Space.find_by(name: "Clapham Common")
 space.photo.attach(io: file7, filename: "Clapham-Common-pond-800-1280x720.png", content_type: file7.content_type_parse.first)
 space.save!
 
-file8 = URI.open("https://upload.wikimedia.org/wikipedia/commons/3/39/Crystal_Palace_Park.jpg")
-space = Space.find_by(name: "Crystal Palace Common")
-space.photo.attach(io: file8, filename: "Crystal_Palace_Park.jpg", content_type: file8.content_type_parse.first)
-space.save!
-
 file9 = URI.open("https://datastories-deptford.citizensense.net/wp-content/uploads/2017/11/Deptford_Park-1024x683.jpg")
 space = Space.find_by(name: "Deptford Park")
 space.photo.attach(io: file9, filename: "Deptford_Park-1024x683.jpg", content_type: file9.content_type_parse.first)
